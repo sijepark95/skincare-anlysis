@@ -1,0 +1,64 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "es2022"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts",
+    ".next-development/types/**/*.ts",
+    ".next-development/dev/types/**/*.ts",
+    ".next-e2e/types/**/*.ts",
+    ".next-e2e/dev/types/**/*.ts",
+    ".local/ml-audit/next-model-smoke-29092/types/**/*.ts",
+    ".local/ml-audit/next-model-smoke-29092/dev/types/**/*.ts",
+    ".local/ml-audit/next-model-smoke-43476/types/**/*.ts",
+    ".local/ml-audit/next-model-smoke-43476/dev/types/**/*.ts",
+    ".local/ml-audit/next-model-smoke-51552/types/**/*.ts",
+    ".local/ml-audit/next-model-smoke-51552/dev/types/**/*.ts",
+    ".local/ml-audit/next-model-smoke-50624/types/**/*.ts",
+    ".local/ml-audit/next-model-smoke-50624/dev/types/**/*.ts",
+    ".local/ml-audit/next-model-smoke-43320/types/**/*.ts",
+    ".local/ml-audit/next-model-smoke-43320/dev/types/**/*.ts",
+    ".local/ml-audit/next-model-smoke-57316/types/**/*.ts",
+    ".local/ml-audit/next-model-smoke-57316/dev/types/**/*.ts",
+    ".next-e2e-openai-ui/types/**/*.ts",
+    ".next-e2e-openai-ui/dev/types/**/*.ts",
+    ".local/next-e2e-consultation/types/**/*.ts",
+    ".local/next-e2e-consultation/dev/types/**/*.ts",
+    ".next-e2e-beauty-modern/types/**/*.ts",
+    ".next-e2e-beauty-modern/dev/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "services"
+  ]
+}

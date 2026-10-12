@@ -1,0 +1,10 @@
+.aelune,
+.brand-tile {
+  --aelune-ice: #eaf5fb;
+  --aelune-ink: #11262f;
+  --aelune-muted: #546873;
+  --aelune-line: #cddde4;
+  --aelune-paper: #f7f8f5;
+  --aelune-display: Georgia, "Times New Roman", serif;
+  --aelune-sans: Arial, Helvetica, sans-serif;
+}

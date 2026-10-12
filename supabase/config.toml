@@ -1,0 +1,56 @@
+project_id = "senmiva"
+
+[api]
+enabled = true
+port = 15431
+schemas = ["public", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+port = 15432
+shadow_port = 15430
+major_version = 17
+
+[db.seed]
+enabled = true
+sql_paths = ["./seed.sql"]
+
+[studio]
+enabled = true
+port = 15433
+
+[local_smtp]
+enabled = true
+port = 15434
+admin_email = "accounts@senmiva.test"
+sender_name = "Senmiva development"
+
+[auth]
+enabled = true
+site_url = "http://127.0.0.1:3000"
+additional_redirect_urls = ["http://127.0.0.1:3000/auth/callback"]
+jwt_expiry = 3600
+# Public owner signup creates an account only; workspace authority requires the scoped RPC.
+enable_signup = true
+enable_anonymous_sign_ins = true
+enable_manual_linking = false
+minimum_password_length = 12
+
+[auth.email]
+# This flag enables the whole email provider, including password login.
+enable_signup = true
+enable_confirmations = true
+otp_length = 6
+otp_expiry = 3600
+
+[auth.email.template.confirmation]
+subject = "Your Senmiva verification code"
+content_path = "./supabase/templates/confirmation.html"
+
+[auth.hook.before_user_created]
+enabled = true
+uri = "pg-functions://postgres/public/senmiva_before_user_created"
+
+[storage]
+enabled = false

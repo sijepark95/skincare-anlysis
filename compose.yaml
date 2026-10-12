@@ -1,0 +1,72 @@
+# Local/private integration package. Supabase is run separately with its CLI.
+# Copy .env.example to .env and replace the shared-secret placeholder first.
+services:
+  web:
+    build:
+      context: .
+      args:
+        NEXT_PUBLIC_APP_URL: ${NEXT_PUBLIC_APP_URL:-http://localhost:3000}
+        NEXT_PUBLIC_HERO_VIDEO_URL: ${NEXT_PUBLIC_HERO_VIDEO_URL:-}
+    ports:
+      - "127.0.0.1:3000:3000"
+    environment:
+      APP_MODE: ${APP_MODE:?Set APP_MODE explicitly to demo or supabase}
+      NEXT_PUBLIC_APP_URL: ${NEXT_PUBLIC_APP_URL:-http://localhost:3000}
+      BEAUTY_PUBLIC_ORIGIN: ${BEAUTY_PUBLIC_ORIGIN:-}
+      NEXT_PUBLIC_SUPABASE_URL: ${NEXT_PUBLIC_SUPABASE_URL:-}
+      NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: ${NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY:-}
+      ANALYSIS_DATABASE_URL: ${ANALYSIS_DATABASE_URL:-}
+      ANALYSIS_SERVICE_URL: http://analysis:8000
+      ANALYSIS_PROVIDER: ${ANALYSIS_PROVIDER:-mock}
+      ANALYSIS_BEAUTY_MAKEUP_ENABLED: ${ANALYSIS_BEAUTY_MAKEUP_ENABLED:-false}
+      ANALYSIS_BEAUTY_PREVIEW_ENABLED: ${ANALYSIS_BEAUTY_PREVIEW_ENABLED:-false}
+      BEAUTY_TEEN_PHOTO_ENABLED: ${BEAUTY_TEEN_PHOTO_ENABLED:-false}
+      ANALYSIS_API_KEY: ${ANALYSIS_API_KEY:?Generate a unique shared analysis secret of at least 32 characters}
+    depends_on:
+      analysis:
+        condition: service_healthy
+    networks:
+      - private_analysis
+      - external_services
+    read_only: true
+    volumes:
+      - demo_catalog:/app/.local
+    tmpfs:
+      - /tmp:uid=10001,gid=10001,mode=1770
+      - /app/.next/cache:uid=10001,gid=10001,mode=0770
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    restart: unless-stopped
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  analysis:
+    build:
+      context: .
+      dockerfile: services/analysis/Dockerfile
+    environment:
+      ANALYSIS_API_KEY: ${ANALYSIS_API_KEY:?Generate a unique shared analysis secret of at least 32 characters}
+      ANALYSIS_PROVIDER: ${ANALYSIS_PROVIDER:-mock}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      ANALYSIS_BEAUTY_MAKEUP_ENABLED: ${ANALYSIS_BEAUTY_MAKEUP_ENABLED:-false}
+      ANALYSIS_BEAUTY_PREVIEW_ENABLED: ${ANALYSIS_BEAUTY_PREVIEW_ENABLED:-false}
+      ANALYSIS_BEAUTY_MAKEUP_TIMEOUT_SECONDS: ${ANALYSIS_BEAUTY_MAKEUP_TIMEOUT_SECONDS:-60}
+    # Deliberately no host port; only the BFF can reach this service.
+    networks:
+      - private_analysis
+      # Required only for explicitly selected OpenAI inference/image generation.
+      - external_services
+    read_only: true
+    tmpfs:
+      - /tmp:uid=10001,gid=10001,mode=1770
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    restart: unless-stopped
+
+networks:
+  private_analysis:
+    internal: true
+  external_services: {}
+
+volumes:
+  demo_catalog: {}

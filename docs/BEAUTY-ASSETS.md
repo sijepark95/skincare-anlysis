@@ -1,0 +1,23 @@
+# Original hairstyle inspiration asset
+
+- Project asset: `public/images/beauty/hair-styles.webp`, 1330×1182, 199124bytes.
+- Generated with the built-in imagegen tool; no reference person's photograph used. Original generated PNG preserved in the Codex generated-images directory; project delivery encoded WebP without creative changes.
+- One3×2 sheet, row-major: textured crop, wispy pixie, chin bob, shoulder lob, long layers, long waves. UI crops these existing tiles; short0/1, medium2/3, long4/5.
+- Photorealistic illustrative adult reference model. Never claim the asset is the guest, a guest hairstyle edit or real store merchandise. No copied screenshot faces or AI-Hub images. User screenshots inform layout only.
+
+## Final generation prompt
+
+Use case: photorealistic-natural. Asset type: original hairstyle inspiration contact sheet for a modern touch-screen beauty kiosk. Create one premium photographic contact sheet with exactly SIX distinct portrait photographs in a precise equal 3-column by 2-row grid, edge to edge, no gutters, NO text, NO typography, NO labels, NO watermark. Each tile has the SAME framing: front-facing adult androgynous model, head and shoulders, complete hair silhouette visible including top and sides, calm expression, natural real skin texture, plain cool pale grey studio backdrop, soft neutral diffuse studio light. The same adult model and same framing across the six tiles for clear hair comparison, no changes to facial geometry. Row-major hair styles: top-left a textured short cropped cut; top-center a soft wispy pixie; top-right a sleek chin-length bob; bottom-left a softly layered shoulder-length lob; bottom-center long straight face-framing layers; bottom-right long gentle flowing waves. Modern wearable salon styling, natural dark brown hair in all six tiles, no accessories or makeup emphasis, no dramatic retouch. Individual tiles should be 3:4 portrait composition, overall sheet 9:8. All six must show notably different lengths and silhouettes. These are illustrative hairstyle references, not photos of a real kiosk guest. Exact straight rectangular tile boundaries, no collaged overlap, no UI or device.
+
+The nine own-photo makeup/hairstyle/hair-color portraits are separate runtime edits with purpose-specific consent, never bundled static assets. Their invariant/style/palette prompts live in the private analysis service. Test portrait fixtures are synthetic and make no external call.
+
+## Local FaceLandmarker prototype asset
+
+- Official Google MediaPipe FaceLandmarker float16 version1 task: [pinned download](https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task), [official web guide](https://ai.google.dev/edge/mediapipe/solutions/vision/face_landmarker/web_js).
+- Local deployment path: `public/face/face-landmarker-v1.task`; **3758596bytes**; SHA-256 `64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff`.
+- Runtime: pinned `@mediapipe/tasks-vision@1.1.0`, same-origin copied SIMD/non-SIMD CPU WASM at `public/face/mediapipe-1.1.0/wasm`. The existing short-range face detector remains a separate pinned artifact for positioning and countdown.
+- `npm run face:prepare` provisions both missing model files and copies/checks the pinned WASM runtime. `scripts/face-assets.mjs` lines72–95 download and verify the FaceLandmarker task with a4MB upper bound and30-second timeout. `npm run face:check` verifies all local checksums without downloading and fails if a required artifact is missing or changed. Run prepare during deployment before build, then check; these generated local runtime files are not a substitute for the source/lockfile setup.
+- `src/infrastructure/face-ratios.worker.ts` loads these assets from this application's origin, processes a bounded transient bitmap on CPU, and returns only three ratios or an unavailable status. It never sends landmarks or pixels to the server; bitmap/model/worker resources are closed after the operation. No face identity or population percentile is calculated.
+- Provenance and checksum identify the exact prototype artifact. They do not establish the model artifact's production licensing terms, and the npm package license alone does not establish those terms. Review the exact model artifact's applicable distribution/use terms before a public pilot; no production licensing approval is asserted here.
+
+Synthetic browser verification loaded the actual task and WASM from the local app for a blank generated image, returned an unavailable measurement, and made no external analysis request. This checks packaging and fail-closed behavior; it is not an accuracy evaluation on a consenting person.

@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "senmiva-training"
+version = "0.1.0"
+description = "Offline skin-label research and explicitly consented vision evaluation. Independent of the retail application."
+requires-python = ">=3.12,<3.15"
+dependencies = []
+
+[project.scripts]
+senmiva-training = "senmiva_training.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+senmiva_training = ["photo_ui/*.html", "photo_ui/*.css", "photo_ui/*.js", "photo_ui/*.svg"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q"

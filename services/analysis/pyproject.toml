@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "senmiva-analysis"
+version = "0.1.0"
+description = "Private mock, local experimental and explicitly consented hosted photo-analysis boundary for Senmiva."
+requires-python = ">=3.12,<3.15"
+dependencies = [
+  "fastapi==0.143.0",
+  "pydantic==2.14.0",
+  "starlette==1.7.0",
+  "uvicorn==0.54.0",
+  "Pillow==12.3.0",
+]
+
+[project.optional-dependencies]
+test = ["httpx2==2.13.1", "pytest==9.1.1"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "../../ml/src"]
+testpaths = ["tests"]
+addopts = "-q"

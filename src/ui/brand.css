@@ -1,0 +1,24 @@
+.brand.brand--aelune {
+  gap: 11px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  color: inherit;
+  white-space: nowrap;
+}
+.brand.brand--aelune svg {
+  width: 25px;
+  height: 35px;
+  color: currentColor;
+}
+@media (max-width: 480px) {
+  .brand.brand--aelune {
+    font-size: 19px;
+    gap: 8px;
+  }
+  .brand.brand--aelune svg {
+    width: 21px;
+    height: 30px;
+  }
+}

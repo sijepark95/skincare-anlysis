@@ -1,0 +1,10 @@
+node_modules
+.next
+.next-development
+.next-e2e
+package-lock.json
+test-results
+playwright-report
+services
+supabase
+public

@@ -1,0 +1,17 @@
+# Explicit hosted-photo override. The base mock service has no provider key or egress.
+# docker compose -f compose.yaml -f compose.openai.yaml up --build
+services:
+  web:
+    environment:
+      ANALYSIS_PROVIDER: openai
+      EXPLANATION_PROVIDER: disabled
+      ANALYSIS_BEAUTY_PREVIEW_ENABLED: ${ANALYSIS_BEAUTY_PREVIEW_ENABLED:-false}
+  analysis:
+    environment:
+      ANALYSIS_PROVIDER: openai
+      OPENAI_API_KEY: ${OPENAI_API_KEY:?Set the private OpenAI key in the ignored Compose environment}
+      ANALYSIS_OPENAI_TIMEOUT_SECONDS: ${ANALYSIS_OPENAI_TIMEOUT_SECONDS:-30}
+      ANALYSIS_BEAUTY_PREVIEW_ENABLED: ${ANALYSIS_BEAUTY_PREVIEW_ENABLED:-false}
+    networks:
+      - private_analysis
+      - external_services

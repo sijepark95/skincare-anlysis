@@ -1,0 +1,3945 @@
+.beauty-shell {
+  --beauty-paper: #f6f8fc;
+  --beauty-surface: #fff;
+  --beauty-ink: #172036;
+  --beauty-muted: #606a7d;
+  --beauty-line: #dce2ef;
+  --beauty-accent: #405bdb;
+  --beauty-blue: #eaf0ff;
+  --beauty-lilac: #f1edff;
+  --beauty-rose: #f6edf2;
+  --beauty-ratio-warm: #e8bda1;
+  --beauty-ratio-mid: #b7d5bd;
+  --beauty-ratio-cool: #95bfe6;
+  --beauty-ratio-lilac: #b0a0e3;
+  min-height: 100svh;
+  background: var(--beauty-paper);
+  color: var(--beauty-ink);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+/* Complete beauty kiosk: functional hierarchy, large touch controls and real session imagery. */
+.beauty-complete-shell {
+  padding-bottom: 110px;
+}
+.complete-main {
+  max-width: 1360px;
+  margin: auto;
+  padding: 24px 40px 48px;
+}
+.complete-top-controls,
+.complete-welcome-tags,
+.complete-welcome-tags span,
+.complete-bottom,
+.complete-bottom > div,
+.complete-section-heading,
+.complete-photo-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.complete-language select {
+  min-height: 48px;
+  border: 1px solid var(--beauty-line);
+  border-radius: 12px;
+  background: var(--beauty-surface);
+  color: var(--beauty-ink);
+  padding: 10px 36px 10px 12px;
+  font: inherit;
+  max-width: 150px;
+}
+.complete-welcome {
+  min-height: calc(100svh - 246px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.complete-welcome-copy h1 {
+  max-width: 650px;
+  font-size: clamp(38px, 4.8vw, 70px);
+}
+.complete-welcome-copy > p {
+  font-size: 20px;
+  max-width: 540px;
+}
+.complete-welcome-tags {
+  flex-wrap: wrap;
+  margin-top: 32px;
+  font-size: 14px;
+  color: var(--beauty-muted);
+}
+.complete-welcome-visual {
+  position: relative;
+  border-radius: 32px;
+  overflow: hidden;
+  background: var(--beauty-lilac);
+  min-height: 420px;
+}
+.complete-welcome-visual .beauty-hair-photo {
+  min-height: 420px;
+  aspect-ratio: 4/4.5;
+  border-radius: 0;
+}
+.complete-welcome-visual-label {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  padding: 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.95);
+  font-size: 18px;
+  font-weight: 600;
+}
+.complete-welcome-visual-label svg {
+  vertical-align: middle;
+  margin-right: 8px;
+  color: var(--beauty-accent);
+}
+.complete-welcome-visual-label span {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  margin-top: 10px;
+  color: var(--beauty-muted);
+}
+.complete-floating-chip {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  padding: 8px;
+  gap: 6px;
+  border-radius: 30px;
+  background: var(--beauty-surface);
+}
+.complete-floating-chip span {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #b77d93;
+}
+.complete-floating-chip span:nth-child(2) {
+  background: #a1748f;
+}
+.complete-floating-chip span:nth-child(3) {
+  background: #a86a83;
+}
+.complete-floating-chip span:nth-child(4) {
+  background: #c699aa;
+}
+.complete-form-page {
+  max-width: 850px;
+  margin: 28px auto;
+}
+.complete-form-page h1,
+.complete-confirm-heading h1 {
+  font-size: clamp(32px, 4vw, 48px);
+  max-width: 820px;
+}
+.complete-form-page > p,
+.complete-confirm-heading > p {
+  max-width: 740px;
+}
+.complete-age-grid {
+  border: 0;
+  padding: 0;
+  margin: 32px 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.complete-age-grid legend {
+  margin-bottom: 16px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.complete-choice {
+  min-height: 90px;
+  border: 1px solid var(--beauty-line);
+  background: var(--beauty-surface);
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--beauty-ink);
+  font-size: 23px;
+}
+.complete-choice.selected,
+.complete-hair-choice.selected {
+  border: 2px solid var(--beauty-accent);
+  background: var(--beauty-blue);
+  box-shadow: 0 0 0 3px var(--beauty-blue);
+}
+.complete-details {
+  margin: 24px 0;
+  border-top: 1px solid var(--beauty-line);
+  border-bottom: 1px solid var(--beauty-line);
+  padding: 20px 0;
+}
+.complete-details summary {
+  min-height: 44px;
+  cursor: pointer;
+  padding: 10px 0;
+  font-weight: 600;
+}
+.complete-details label:not(.complete-checkbox),
+.complete-select-grid label,
+.complete-modal-fields > label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.beauty-complete-shell select {
+  font-family: inherit;
+}
+.complete-details select,
+.complete-select-grid select,
+.complete-modal-fields select {
+  min-height: 52px;
+  width: 100%;
+  border: 1px solid var(--beauty-line);
+  border-radius: 12px;
+  background: var(--beauty-surface);
+  color: var(--beauty-ink);
+  padding: 12px;
+  font-size: 16px;
+}
+.complete-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin: 16px 0;
+  padding: 8px 0;
+  min-height: 48px;
+  cursor: pointer;
+  line-height: 1.5;
+}
+.complete-checkbox input {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  margin: 2px 0 0;
+  accent-color: var(--beauty-accent);
+  cursor: pointer;
+}
+.complete-checkbox > span {
+  display: block;
+}
+.complete-checkbox > span > span {
+  display: block;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--beauty-muted);
+  margin-top: 10px;
+}
+.complete-consent {
+  border: 1px solid var(--beauty-line);
+  background: var(--beauty-surface);
+  padding: 22px;
+  border-radius: 20px;
+}
+.complete-consent:has(input:checked) {
+  border-color: var(--beauty-accent);
+  background: var(--beauty-blue);
+}
+.complete-empty {
+  border: 1px dashed var(--beauty-line);
+  padding: 22px;
+  border-radius: 16px;
+  color: var(--beauty-muted);
+}
+.complete-photo-page {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 48px;
+  align-items: center;
+  min-height: calc(100svh - 250px);
+}
+.complete-photo-page h1 {
+  font-size: clamp(36px, 4vw, 55px);
+}
+.complete-camera-frame {
+  aspect-ratio: 4/3;
+  background: #192139;
+  border-radius: 26px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.complete-camera-frame video,
+.complete-camera-frame > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.complete-camera-frame video {
+  transform: scaleX(-1);
+}
+.complete-camera-oval {
+  position: absolute;
+  width: 46%;
+  height: 76%;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  box-shadow: 0 0 0 999px rgba(17, 26, 47, 0.12);
+}
+.complete-camera-status {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  text-align: center;
+  background: rgba(17, 26, 47, 0.9);
+  padding: 12px;
+  border-radius: 12px;
+  color: white;
+  font-size: 14px;
+}
+.complete-countdown {
+  position: absolute;
+  font-size: 80px;
+  font-weight: 600;
+  text-shadow: 0 2px 20px #172036;
+}
+.complete-photo-actions {
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.complete-photo-actions > * {
+  flex: 1;
+  white-space: normal;
+  text-align: center;
+}
+.complete-photo-actions input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+.complete-photo-actions label {
+  position: relative;
+  cursor: pointer;
+}
+.complete-photo-actions label:focus-within {
+  outline: 3px solid var(--beauty-accent);
+  outline-offset: 3px;
+}
+.complete-photo-actions label.disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.complete-confirm {
+  max-width: 980px;
+  margin: 0 auto;
+}
+.complete-confirm-summary {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  padding: 28px;
+  background: var(--beauty-surface);
+  border: 1px solid var(--beauty-line);
+  border-radius: 24px;
+  margin: 28px 0;
+}
+.complete-confirm-portrait {
+  width: 160px;
+  height: 180px;
+  border-radius: 18px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background: var(--beauty-blue);
+  color: var(--beauty-accent);
+  flex: none;
+}
+.complete-confirm-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.complete-select-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.complete-base-confirm {
+  margin-top: 28px;
+}
+.complete-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  background: rgba(255, 255, 255, 0.97);
+  border-top: 1px solid var(--beauty-line);
+  padding: 16px max(24px, calc((100vw - 1280px) / 2))
+    max(16px, env(safe-area-inset-bottom));
+  justify-content: flex-end;
+  box-shadow: 0 -8px 30px rgba(31, 47, 89, 0.035);
+}
+.complete-bottom > div {
+  margin-right: auto;
+  color: var(--beauty-muted);
+  font-size: 13px;
+}
+.complete-bottom .button {
+  max-width: 580px;
+}
+.complete-alert {
+  padding: 16px 20px;
+  border: 1px solid #8d6661;
+  background: #fff5f3;
+  color: #663c35;
+  border-radius: 14px;
+  margin-bottom: 20px;
+}
+.complete-processing {
+  position: fixed;
+  inset: 0;
+  z-index: 35;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background: rgba(245, 248, 255, 0.92);
+  color: var(--beauty-ink);
+  padding: 40px;
+  font-size: 24px;
+  text-align: center;
+  pointer-events: none;
+}
+.complete-processing svg {
+  color: var(--beauty-accent);
+}
+.complete-report-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 4px 0 20px;
+}
+.complete-report-copy .beauty-eyebrow {
+  display: block;
+  margin-bottom: 8px;
+}
+.beauty-complete-shell .complete-report-sticker {
+  flex: none;
+  padding: 13px 18px;
+  border: 2px solid var(--beauty-surface);
+  border-radius: 24px 24px 24px 8px;
+  background: var(--beauty-lilac);
+  color: var(--beauty-accent);
+  box-shadow: 0 3px 0 var(--beauty-line);
+  font-size: 20px;
+  font-weight: 600;
+  transform: rotate(4deg);
+}
+.complete-style-direction {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+  padding: 18px 22px;
+  border: 1px solid var(--beauty-line);
+  border-radius: 22px;
+  background: linear-gradient(
+    115deg,
+    var(--beauty-blue),
+    var(--beauty-lilac) 65%,
+    var(--beauty-rose)
+  );
+}
+.complete-style-direction > span {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--beauty-surface);
+  font-size: 22px;
+}
+.complete-style-direction > div {
+  flex: none;
+  max-width: 45%;
+}
+.complete-style-direction div > span {
+  display: block;
+  color: var(--beauty-muted);
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+.complete-style-direction strong {
+  font-size: 17px;
+  line-height: 1.4;
+}
+.complete-style-direction p {
+  margin: 0 0 0 auto;
+  max-width: 610px;
+  color: var(--beauty-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+.complete-report-title h1 {
+  font-size: 28px;
+  margin: 0;
+}
+.beauty-complete-shell .complete-report-title h1 {
+  font-size: 28px;
+  margin: 0;
+}
+.beauty-complete-shell .complete-section-heading h2 {
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+.beauty-complete-shell .complete-welcome-copy h1 {
+  font-size: clamp(38px, 4.8vw, 70px);
+}
+.beauty-complete-shell .complete-form-page h1,
+.beauty-complete-shell .complete-confirm-heading h1 {
+  font-size: clamp(32px, 4vw, 48px);
+}
+.complete-report-title > span {
+  font-size: 11px;
+}
+.complete-section {
+  border: 1px solid var(--beauty-line);
+  background: var(--beauty-surface);
+  border-radius: 28px;
+  padding: 28px;
+  margin: 0 0 24px;
+}
+.complete-section:nth-of-type(even) .complete-number {
+  background: var(--beauty-lilac);
+}
+.complete-heading-emoji {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 0.85em;
+  vertical-align: 2px;
+}
+.complete-section-heading {
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+.complete-section-heading h2 {
+  margin: 0 0 8px;
+  font-size: 28px;
+}
+.complete-section-heading p {
+  margin: 0;
+  max-width: 780px;
+  font-size: 14px;
+}
+.complete-section-heading > button {
+  margin-left: auto;
+  flex: none;
+}
+.complete-number {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  background: var(--beauty-blue);
+  color: var(--beauty-accent);
+  border-radius: 12px;
+  font-size: 13px;
+  flex: none;
+}
+.complete-observations {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-bottom: 26px;
+}
+.complete-observations article {
+  padding: 20px 16px;
+  background: var(--beauty-paper);
+  border-radius: 16px;
+  min-width: 0;
+}
+.complete-observations span {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: var(--beauty-muted);
+}
+.complete-observations strong {
+  font-size: 16px;
+  line-height: 1.45;
+  font-weight: 600;
+}
+.complete-skin-columns {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 32px;
+}
+.complete-skin-columns h3 {
+  font-size: 18px;
+}
+.complete-ingredients {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.complete-ingredients > span {
+  display: block;
+  padding: 10px 14px;
+  background: var(--beauty-blue);
+  border-radius: 12px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+.complete-ingredients small {
+  display: block;
+  color: var(--beauty-muted);
+  margin-top: 5px;
+}
+.complete-products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+.complete-product {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 18px;
+  border: 1px solid var(--beauty-line);
+  border-radius: 16px;
+  min-width: 0;
+}
+.complete-product h3 {
+  font-size: 16px;
+  margin: 5px 0;
+  letter-spacing: -0.025em;
+  overflow-wrap: anywhere;
+}
+.complete-product p {
+  font-size: 12px;
+  margin: 5px 0 0;
+  overflow-wrap: anywhere;
+}
+.complete-product div > span {
+  color: var(--beauty-muted);
+  font-size: 12px;
+}
+.complete-product-number {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 48px;
+  background: var(--beauty-lilac);
+  border-radius: 10px;
+  color: var(--beauty-accent);
+  flex: none;
+  font-size: 12px;
+}
+.complete-swatch {
+  width: 36px;
+  height: 52px;
+  flex: none;
+  border: 1px solid rgba(23, 32, 54, 0.16);
+  border-radius: 9px;
+}
+.complete-fineprint {
+  font-size: 12px !important;
+  line-height: 1.6;
+  margin: 20px 0 0;
+}
+.complete-face-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.3fr;
+  gap: 32px;
+}
+.complete-portrait {
+  aspect-ratio: 4/4.3;
+  max-height: 480px;
+  border-radius: 22px;
+  background: var(--beauty-blue);
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.complete-portrait > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.complete-portrait > span:last-child {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: var(--beauty-surface);
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-size: 15px;
+}
+.complete-portrait-ring {
+  position: absolute;
+  width: 55%;
+  height: 65%;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 48%;
+  pointer-events: none;
+}
+.complete-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 28px;
+}
+.complete-features > div {
+  background: var(--beauty-paper);
+  padding: 16px;
+  border-radius: 14px;
+}
+.complete-features span,
+.complete-vibe > span:not(.complete-animal-sticker) {
+  display: block;
+  font-size: 12px;
+  color: var(--beauty-muted);
+  margin-bottom: 8px;
+}
+.complete-features strong {
+  font-size: 17px;
+  font-weight: 600;
+}
+.complete-face-data > h3 {
+  font-size: 16px;
+}
+.complete-ratio {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--beauty-line);
+  padding: 15px 0;
+}
+.complete-ratio svg {
+  color: var(--beauty-accent);
+  flex: none;
+}
+.complete-ratio span {
+  font-size: 14px;
+}
+.complete-ratio strong {
+  margin-left: auto;
+  font-size: 21px;
+  font-weight: 500;
+}
+.complete-vibe {
+  position: relative;
+  margin-top: 20px;
+  padding: 18px 88px 18px 18px;
+  background: var(--beauty-lilac);
+  border-radius: 14px;
+}
+.complete-animal-sticker {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 20px 20px 10px 20px;
+  background: var(--beauty-surface);
+  box-shadow: 0 3px 0 var(--beauty-line);
+  font-size: 34px;
+  transform: rotate(6deg);
+}
+.complete-vibe p {
+  font-size: 12px;
+  margin: 8px 0 0;
+}
+.complete-palette {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: var(--beauty-paper);
+  padding: 24px;
+  border-radius: 18px;
+  margin-top: 24px;
+}
+.complete-palette span:not(.complete-palette-swatches span) {
+  font-size: 12px;
+  color: var(--beauty-muted);
+}
+.complete-palette h3 {
+  margin: 8px 0 0;
+}
+.complete-palette-swatches {
+  display: flex;
+  gap: 8px;
+}
+.complete-palette-swatches > span {
+  display: block;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid rgba(23, 32, 54, 0.12);
+}
+.complete-subheading {
+  margin-top: 28px !important;
+}
+.complete-three {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.complete-look {
+  min-width: 0;
+}
+.complete-style-note {
+  min-width: 0;
+  padding: 22px;
+  border-radius: 20px;
+  background: var(--beauty-blue);
+}
+.complete-style-note:nth-child(2) {
+  background: var(--beauty-lilac);
+}
+.complete-style-note:nth-child(3) {
+  background: var(--beauty-rose);
+}
+.complete-style-note > span {
+  font-size: 25px;
+}
+.complete-style-note h3 {
+  font-size: 18px;
+  margin: 16px 0 8px;
+}
+.complete-style-note p {
+  font-size: 14px;
+  margin: 0;
+}
+.complete-look-image {
+  position: relative;
+  aspect-ratio: 3/4;
+  background: linear-gradient(
+    150deg,
+    var(--beauty-blue),
+    var(--beauty-paper) 58%,
+    var(--beauty-lilac)
+  );
+  border-radius: 20px;
+  overflow: hidden;
+}
+.complete-look-image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.complete-image-tag {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.96);
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 11px;
+  line-height: 1.4;
+}
+.complete-image-empty {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  padding: 20px;
+  color: var(--beauty-muted);
+}
+.complete-image-empty svg {
+  color: var(--beauty-accent);
+}
+.complete-image-empty strong {
+  font-size: 14px;
+  font-weight: 500;
+}
+.complete-image-empty span {
+  font-size: 11px;
+}
+.complete-image-empty .complete-tiny-face {
+  font-size: 24px;
+  color: var(--beauty-accent);
+  letter-spacing: 0.04em;
+}
+.complete-look-caption {
+  padding: 18px 2px;
+}
+.complete-look h3 {
+  font-size: 18px;
+  margin: 0 0 8px;
+}
+.complete-look .text-button {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+}
+.complete-generation {
+  position: static;
+  z-index: 20;
+  background: var(--beauty-ink);
+  color: var(--beauty-surface);
+  padding: 16px 20px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 8px 30px rgba(23, 32, 54, 0.12);
+}
+.complete-generation.is-active {
+  position: sticky;
+  bottom: 104px;
+}
+.complete-generation > div {
+  flex: 1;
+}
+.complete-generation strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 500;
+}
+.complete-generation span {
+  display: block;
+  font-size: 12px;
+  color: #dce2ef;
+  margin-top: 6px;
+  line-height: 1.5;
+}
+.complete-generation .text-button {
+  color: var(--beauty-surface);
+}
+.complete-hair-choice {
+  padding: 0;
+  background: var(--beauty-surface);
+  border: 1px solid var(--beauty-line);
+  border-radius: 20px;
+  overflow: hidden;
+  color: var(--beauty-ink);
+}
+.complete-hair-choice .beauty-hair-photo {
+  border-radius: 0;
+  aspect-ratio: 4/3;
+}
+.complete-hair-choice strong {
+  display: block;
+  padding: 16px;
+  font-weight: 500;
+  font-size: 17px;
+}
+/* Portrait-led result study: numeric tracks describe actual geometry only. */
+.reference-face-headline {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 4px 0 26px;
+}
+.reference-vibe-emoji {
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  flex: none;
+  background: var(--beauty-lilac);
+  border: 3px solid var(--beauty-surface);
+  border-radius: 26px 26px 26px 10px;
+  box-shadow: 0 3px 0 var(--beauty-line);
+  font-size: 38px;
+  color: var(--beauty-accent);
+  transform: rotate(-5deg);
+}
+.beauty-complete-shell .reference-face-headline h3 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin: 8px 0;
+  font-size: 27px;
+  line-height: 1.3;
+  letter-spacing: -0.035em;
+}
+.reference-face-headline p {
+  margin: 0;
+  font-size: 16px;
+}
+.reference-face-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.3fr);
+  gap: 30px;
+  align-items: stretch;
+}
+.reference-portrait {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-width: 0;
+  align-self: start;
+  aspect-ratio: 3/4;
+  min-height: 350px;
+  max-height: 560px;
+  background: var(--beauty-blue);
+  border-radius: 24px;
+  overflow: hidden;
+  color: var(--beauty-accent);
+}
+.reference-portrait > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.reference-face-outline {
+  position: absolute;
+  width: 65%;
+  height: 66%;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 46% 46% 48% 48%;
+  box-shadow: 0 0 0 999px rgba(23, 32, 54, 0.045);
+  pointer-events: none;
+}
+.reference-portrait-label,
+.reference-shape-label {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  left: 16px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--beauty-surface);
+  color: var(--beauty-ink);
+  font-size: 12px;
+  line-height: 1.4;
+}
+.reference-portrait-label {
+  top: 16px;
+}
+.reference-shape-label {
+  bottom: 16px;
+  right: 16px;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 600;
+}
+.reference-feature-list {
+  min-width: 0;
+}
+.reference-feature-row {
+  padding: 0 0 20px;
+  margin: 0 0 20px;
+  border-bottom: 1px solid var(--beauty-line);
+}
+.reference-feature-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.reference-feature-icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: var(--beauty-blue);
+  color: var(--beauty-accent);
+  flex: none;
+}
+.reference-feature-heading h4 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+}
+.reference-feature-heading strong {
+  margin-left: auto;
+  max-width: 45%;
+  font-size: 17px;
+  font-weight: 600;
+  text-align: right;
+}
+.reference-ratio-detail,
+.reference-ratio-ends {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 14px;
+  color: var(--beauty-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+.reference-ratio-detail {
+  margin: 12px 0 13px;
+}
+.reference-ratio-value {
+  flex: none;
+  color: var(--beauty-ink);
+  font-size: 22px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.reference-ratio-track {
+  position: relative;
+  height: 12px;
+  border-radius: 20px;
+  background: linear-gradient(
+    90deg,
+    var(--beauty-ratio-warm),
+    var(--beauty-ratio-mid) 35%,
+    var(--beauty-ratio-cool) 65%,
+    var(--beauty-ratio-lilac)
+  );
+}
+.reference-ratio-track.unavailable {
+  background: var(--beauty-paper);
+  border: 1px dashed var(--beauty-line);
+}
+.reference-ratio-marker {
+  position: absolute;
+  top: 50%;
+  width: 17px;
+  height: 17px;
+  border: 3px solid var(--beauty-surface);
+  border-radius: 50%;
+  background: var(--beauty-ink);
+  box-shadow: 0 0 0 1px var(--beauty-ink);
+  transform: translate(-50%, -50%);
+}
+.reference-ratio-ends {
+  margin-top: 10px;
+}
+.reference-ratio-ends span {
+  max-width: 47%;
+}
+.reference-ratio-ends span:last-child {
+  text-align: right;
+}
+.reference-ratio-scale,
+.reference-ratio-note,
+.reference-animal-note,
+.reference-color-note,
+.reference-stylebook-note {
+  margin: 12px 0 0;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--beauty-muted);
+}
+.reference-ratio-scale {
+  font-weight: 600;
+  color: var(--beauty-ink);
+}
+.reference-animal-note {
+  display: flex;
+  gap: 10px;
+  margin: 22px 0 0;
+  padding: 14px 18px;
+  background: var(--beauty-lilac);
+  border-radius: 14px;
+}
+.reference-animal-note > span {
+  color: var(--beauty-accent);
+  font-size: 18px;
+}
+.reference-color-study {
+  margin-top: 32px;
+  padding-top: 30px;
+  border-top: 1px solid var(--beauty-line);
+}
+.reference-color-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+.beauty-complete-shell .reference-color-heading h3 {
+  margin: 8px 0;
+  font-size: 26px;
+  line-height: 1.3;
+}
+.reference-color-heading h3 > span {
+  margin-right: 10px;
+}
+.reference-color-heading p {
+  margin: 0;
+  font-size: 15px;
+}
+.reference-confirmed {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: var(--beauty-blue);
+  border-radius: 12px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--beauty-accent);
+  flex: none;
+}
+.reference-color-cards {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr 1fr;
+  gap: 12px;
+}
+.reference-color-cards > article {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid var(--beauty-line);
+  border-radius: 20px;
+  background: var(--beauty-paper);
+}
+.reference-color-cards > article:first-child {
+  background: var(--beauty-lilac);
+  border-color: transparent;
+}
+.reference-card-label {
+  display: block;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--beauty-muted);
+}
+.reference-color-cards h4 {
+  margin: 12px 0;
+  font-size: 21px;
+  line-height: 1.35;
+}
+.reference-color-cards p {
+  margin: 12px 0 0;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.reference-color-symbol {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 16px;
+  border-radius: 14px;
+  background: var(--beauty-surface);
+  color: var(--beauty-accent);
+  font-size: 28px;
+}
+.reference-color-swatches {
+  display: flex;
+  gap: 6px;
+  margin-top: 18px;
+}
+.reference-color-swatches > span {
+  display: block;
+  flex: 1;
+  min-width: 0;
+  height: 58px;
+  border-radius: 12px;
+  border: 1px solid rgba(23, 32, 54, 0.12);
+}
+.reference-stylebook .complete-look {
+  overflow: hidden;
+  border: 1px solid var(--beauty-line);
+  border-radius: 22px;
+  background: var(--beauty-surface);
+}
+.reference-stylebook .complete-look-image {
+  border-radius: 0;
+}
+.reference-stylebook .complete-look-caption {
+  padding: 20px;
+}
+.reference-stylebook .complete-look-caption h3 {
+  font-size: 21px;
+  line-height: 1.35;
+}
+.reference-stylebook .complete-look-caption p {
+  margin: 10px 0 12px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.reference-look-number {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: grid;
+  place-items: center;
+  z-index: 1;
+  width: 34px;
+  height: 34px;
+  background: var(--beauty-surface);
+  color: var(--beauty-accent);
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 600;
+}
+.reference-look-swatches {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.reference-look-swatches > span {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid rgba(23, 32, 54, 0.12);
+}
+.complete-save-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.complete-save-section > div {
+  flex: 1;
+}
+.complete-save-section h2 {
+  font-size: 26px;
+}
+.complete-save-section p {
+  max-width: 680px;
+  font-size: 13px;
+}
+.complete-modal-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.complete-modal-fields fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+.complete-modal-fields legend {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.complete-exclusion-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.complete-qr {
+  text-align: center;
+}
+.complete-qr img {
+  max-width: 100%;
+}
+@media (max-width: 1024px) {
+  .complete-main {
+    padding: 24px 24px 40px;
+  }
+  .complete-welcome {
+    gap: 32px;
+  }
+  .complete-welcome-visual,
+  .complete-welcome-visual .beauty-hair-photo {
+    min-height: 360px;
+  }
+  .complete-section {
+    padding: 24px;
+  }
+  .complete-section-heading {
+    gap: 12px;
+  }
+  .complete-section-heading > button {
+    font-size: 12px;
+  }
+  .complete-skin-columns {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .complete-observations article {
+    padding: 16px 12px;
+  }
+  .complete-observations strong {
+    font-size: 14px;
+  }
+  .complete-photo-page {
+    gap: 28px;
+  }
+  .complete-select-grid {
+    gap: 12px;
+  }
+  .complete-generation {
+    bottom: 100px;
+  }
+}
+@media (min-width: 700px) and (orientation: portrait) {
+  .complete-welcome {
+    min-height: calc(100svh - 255px);
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-content: center;
+  }
+  .complete-welcome-copy {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+  }
+  .complete-welcome-copy h1 {
+    max-width: 800px;
+    font-size: clamp(44px, 6.5vw, 70px);
+  }
+  .complete-welcome-copy > p {
+    max-width: 680px;
+    margin: 24px auto;
+  }
+  .complete-welcome-tags {
+    justify-content: center;
+  }
+  .complete-welcome-visual {
+    width: min(100%, 650px);
+    margin: 0 auto;
+    height: min(44svh, 740px);
+  }
+  .complete-welcome-visual .beauty-hair-photo {
+    height: 100%;
+    aspect-ratio: auto;
+  }
+  .complete-form-page {
+    margin-top: 8svh;
+  }
+  .complete-photo-page {
+    grid-template-columns: 1fr;
+    max-width: 850px;
+    margin: 4svh auto;
+  }
+  .complete-camera-frame {
+    aspect-ratio: 4/3;
+  }
+  .complete-confirm {
+    margin-top: 4svh;
+  }
+  .complete-confirm-summary {
+    min-height: 300px;
+  }
+  .complete-confirm-portrait {
+    width: 230px;
+    height: 260px;
+  }
+  .complete-book .complete-face-grid {
+    grid-template-columns: 0.8fr 1.2fr;
+  }
+}
+@media (max-width: 650px) {
+  .reference-face-headline {
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+  .reference-vibe-emoji {
+    width: 58px;
+    height: 58px;
+    border-radius: 20px 20px 20px 8px;
+    font-size: 28px;
+  }
+  .beauty-complete-shell .reference-face-headline h3 {
+    font-size: 22px;
+    gap: 4px 10px;
+  }
+  .reference-face-headline p {
+    font-size: 14px;
+  }
+  .reference-face-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .reference-portrait {
+    min-height: 0;
+    max-height: 360px;
+    aspect-ratio: 4/4.3;
+  }
+  .reference-feature-heading h4,
+  .reference-feature-heading strong {
+    font-size: 16px;
+  }
+  .reference-ratio-detail,
+  .reference-ratio-ends {
+    font-size: 12px;
+  }
+  .reference-ratio-value {
+    font-size: 21px;
+  }
+  .reference-color-heading {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .reference-color-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .reference-color-cards > article {
+    padding: 14px;
+    border-radius: 16px;
+  }
+  .reference-color-cards h4 {
+    font-size: 18px;
+  }
+  .reference-color-swatches {
+    gap: 4px;
+  }
+  .reference-color-swatches > span {
+    height: 42px;
+    border-radius: 8px;
+  }
+  .reference-stylebook .complete-three {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .reference-stylebook .complete-look {
+    display: grid;
+    grid-template-columns: 0.85fr 1fr;
+    border-radius: 16px;
+  }
+  .reference-stylebook .complete-look-image {
+    height: 100%;
+    aspect-ratio: auto;
+  }
+  .reference-stylebook .complete-look-caption {
+    padding: 14px;
+  }
+  .reference-stylebook .complete-look-caption h3 {
+    font-size: 18px;
+  }
+  .reference-stylebook .complete-look-caption p {
+    font-size: 13px;
+  }
+  .reference-stylebook .complete-image-tag {
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    font-size: 10px;
+    padding: 6px;
+  }
+  .beauty-complete-shell {
+    padding-bottom: 104px;
+  }
+  .complete-main {
+    padding: 20px 16px 32px;
+  }
+  .complete-top-controls {
+    gap: 8px;
+  }
+  .complete-language select {
+    max-width: 112px;
+    font-size: 13px;
+    padding-left: 8px;
+  }
+  .complete-top-controls > button {
+    font-size: 0;
+    gap: 0;
+    min-width: 44px;
+  }
+  .complete-top-controls > button svg {
+    width: 20px;
+  }
+  .complete-welcome {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    min-height: auto;
+  }
+  .complete-welcome-copy h1 {
+    font-size: 40px;
+  }
+  .complete-welcome-copy > p {
+    font-size: 17px;
+  }
+  .complete-welcome-tags {
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .complete-welcome-visual {
+    min-height: 300px;
+  }
+  .complete-welcome-visual .beauty-hair-photo {
+    min-height: 300px;
+    aspect-ratio: 4/3;
+  }
+  .complete-welcome-visual-label {
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    font-size: 15px;
+  }
+  .complete-bottom {
+    gap: 10px;
+    padding: 12px 16px max(12px, env(safe-area-inset-bottom));
+  }
+  .complete-bottom > div {
+    display: none;
+  }
+  .complete-bottom .button {
+    flex: 1;
+    font-size: 14px;
+    min-height: 58px;
+  }
+  .complete-bottom > .text-button {
+    font-size: 13px;
+  }
+  .complete-form-page {
+    margin: 12px 0;
+  }
+  .complete-form-page h1,
+  .complete-confirm-heading h1 {
+    font-size: 32px;
+  }
+  .complete-age-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .complete-choice {
+    min-height: 76px;
+    font-size: 21px;
+    padding: 16px;
+  }
+  .complete-consent {
+    padding: 18px;
+  }
+  .complete-consent strong {
+    font-size: 15px;
+  }
+  .complete-photo-page {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    min-height: auto;
+  }
+  .complete-photo-page h1 {
+    font-size: 34px;
+  }
+  .complete-camera-frame {
+    border-radius: 20px;
+  }
+  .complete-photo-actions {
+    gap: 10px;
+  }
+  .complete-photo-actions .button {
+    font-size: 13px;
+    padding: 12px;
+  }
+  .complete-confirm-summary {
+    gap: 16px;
+    padding: 18px;
+  }
+  .complete-confirm-portrait {
+    width: 100px;
+    height: 140px;
+  }
+  .complete-confirm-summary h2 {
+    font-size: 23px;
+  }
+  .complete-confirm-summary .complete-palette-swatches {
+    gap: 5px;
+  }
+  .complete-confirm-summary .complete-palette-swatches span {
+    width: 30px;
+    height: 30px;
+  }
+  .complete-select-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .complete-report-title {
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .beauty-complete-shell .complete-report-sticker {
+    font-size: 13px;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 16px 16px 16px 6px;
+  }
+  .complete-style-direction {
+    gap: 10px;
+    padding: 16px;
+    flex-wrap: wrap;
+    border-radius: 18px;
+  }
+  .complete-style-direction > div {
+    max-width: calc(100% - 52px);
+  }
+  .complete-style-direction p {
+    width: 100%;
+  }
+  .complete-style-note {
+    padding: 12px;
+    border-radius: 12px;
+  }
+  .complete-style-note h3 {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+  .complete-style-note p {
+    font-size: 12px;
+  }
+  .complete-report-title h1 {
+    margin-top: 10px;
+    font-size: 25px;
+  }
+  .complete-section {
+    border-radius: 22px;
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+  .complete-section-heading {
+    flex-wrap: wrap;
+  }
+  .complete-section-heading > div {
+    flex: 1;
+  }
+  .complete-section-heading h2 {
+    font-size: 25px;
+  }
+  .complete-section-heading > button {
+    margin-left: 52px;
+  }
+  .complete-section-heading p {
+    font-size: 13px;
+  }
+  .complete-observations {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .complete-observations article:last-child {
+    grid-column: span 2;
+  }
+  .complete-observations span {
+    font-size: 13px;
+  }
+  .complete-face-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .complete-portrait {
+    max-height: 400px;
+    aspect-ratio: 4/3;
+  }
+  .complete-features {
+    gap: 8px;
+  }
+  .complete-features > div {
+    padding: 12px;
+  }
+  .complete-features strong {
+    font-size: 15px;
+  }
+  .complete-palette {
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+  .complete-palette-swatches > span {
+    width: 44px;
+    height: 44px;
+  }
+  .complete-three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .complete-look-image {
+    aspect-ratio: 3/4.2;
+    border-radius: 12px;
+  }
+  .complete-image-empty {
+    padding: 10px;
+    gap: 10px;
+  }
+  .complete-look-image:has(.complete-image-empty),
+  .complete-image-empty {
+    min-height: 220px;
+    aspect-ratio: auto;
+  }
+  .complete-image-empty > svg {
+    display: none;
+  }
+  .complete-image-empty strong {
+    font-size: 11px;
+  }
+  .complete-image-empty svg {
+    width: 22px;
+  }
+  .complete-image-empty span {
+    font-size: 10px;
+  }
+  .complete-look-caption {
+    padding: 12px 0;
+  }
+  .complete-look h3 {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .complete-look .text-button {
+    font-size: 11px;
+    line-height: 1.4;
+    gap: 4px;
+  }
+  .complete-look .text-button svg {
+    flex: none;
+    width: 14px;
+  }
+  .complete-image-tag {
+    font-size: 9px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    padding: 5px;
+  }
+  .complete-generation {
+    bottom: 88px;
+    padding: 14px;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .complete-generation > div {
+    min-width: 180px;
+  }
+  .complete-generation .text-button {
+    min-height: 44px;
+    font-size: 12px;
+  }
+  .complete-hair-choice {
+    border-radius: 12px;
+  }
+  .complete-hair-choice strong {
+    font-size: 14px;
+    padding: 12px;
+  }
+  .complete-save-section {
+    flex-wrap: wrap;
+  }
+  .complete-save-section > div {
+    flex-basis: 100%;
+  }
+  .complete-save-section > button {
+    flex: 1;
+    font-size: 13px;
+  }
+  .complete-processing {
+    font-size: 20px;
+    flex-direction: column;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .beauty-complete-shell * {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
+.beauty-shell * {
+  box-sizing: border-box;
+}
+.beauty-shell p {
+  color: var(--beauty-muted);
+  line-height: 1.6;
+}
+.beauty-shell h1,
+.beauty-shell h2,
+.beauty-shell h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.045em;
+}
+.beauty-shell h1 {
+  font-size: clamp(36px, 4.5vw, 64px);
+  line-height: 1.08;
+  margin: 16px 0 20px;
+}
+.beauty-shell h2 {
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1.15;
+  margin: 12px 0 16px;
+}
+.beauty-shell h3 {
+  font-size: 21px;
+  line-height: 1.3;
+  margin: 0 0 10px;
+  letter-spacing: -0.025em;
+}
+.beauty-shell h1 span,
+.beauty-shell h2 span {
+  color: var(--beauty-accent);
+}
+.beauty-shell h1:focus {
+  outline: none;
+}
+.beauty-shell :focus-visible {
+  outline: 3px solid var(--beauty-accent);
+  outline-offset: 4px;
+}
+.beauty-shell button {
+  font-family: inherit;
+  cursor: pointer;
+  transition:
+    background 0.18s,
+    border-color 0.18s,
+    box-shadow 0.18s;
+}
+.beauty-shell button:disabled {
+  cursor: default;
+}
+.beauty-shell .button {
+  min-height: 58px;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  gap: 12px;
+  padding: 16px 24px;
+  white-space: normal;
+}
+.beauty-shell .button.primary {
+  color: #fff;
+  background: var(--beauty-accent);
+  border: 1px solid var(--beauty-accent);
+  box-shadow: 0 5px 16px #405bdb18;
+}
+.beauty-shell .button.secondary {
+  color: var(--beauty-ink);
+  background: #fff;
+  border: 1px solid var(--beauty-line);
+}
+.beauty-shell .button:not(:disabled):active {
+  box-shadow: inset 0 0 0 2px #17203620;
+}
+.beauty-header {
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 16px 40px;
+  border-bottom: 1px solid var(--beauty-line);
+  background: #fff;
+}
+.beauty-header .brand {
+  font-size: 30px;
+  letter-spacing: 0.13em;
+}
+.beauty-header > span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--beauty-muted);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+}
+.beauty-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--beauty-accent);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  line-height: 1.5;
+}
+.beauty-small {
+  font-size: 13px;
+  line-height: 1.6;
+}
+.beauty-text-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 56px;
+  padding: 10px 16px;
+  background: transparent;
+  color: var(--beauty-ink);
+  border: 0;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+}
+.beauty-text-button:disabled {
+  opacity: 0.45;
+}
+.beauty-welcome {
+  max-width: 1400px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  padding: 56px 64px;
+  min-height: calc(100svh - 148px);
+  align-items: center;
+}
+.beauty-welcome h1 {
+  font-size: clamp(44px, 4.8vw, 74px);
+  letter-spacing: -0.055em;
+  margin: 24px 0;
+}
+.beauty-welcome-copy > p:not(.beauty-small) {
+  font-size: 18px;
+  max-width: 455px;
+}
+.beauty-welcome-copy > .button {
+  width: 100%;
+  max-width: 430px;
+  margin-top: 8px;
+  justify-content: space-between;
+  padding-inline: 24px;
+}
+.beauty-welcome-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin: 24px 0;
+  color: var(--beauty-muted);
+  font-size: 14px;
+}
+.beauty-welcome-facts span {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.beauty-skin-entry {
+  display: flex;
+  width: max-content;
+  padding-left: 0;
+  margin-top: 8px;
+}
+.beauty-welcome-visual {
+  min-height: 540px;
+  height: min(65svh, 660px);
+  position: relative;
+  margin: 0 20px;
+}
+.beauty-hair-photo {
+  background-image: url("/images/beauty/hair-styles.webp");
+  background-size: 300% 200%;
+  background-repeat: no-repeat;
+  background-color: #e5e5e8;
+  width: 100%;
+  height: 100%;
+}
+.hair-look-0 {
+  background-position: 0 0;
+}
+.hair-look-1 {
+  background-position: 50% 0;
+}
+.hair-look-2 {
+  background-position: 100% 0;
+}
+.hair-look-3 {
+  background-position: 0 100%;
+}
+.hair-look-4 {
+  background-position: 50% 100%;
+}
+.hair-look-5 {
+  background-position: 100% 100%;
+}
+.beauty-hero-photo {
+  border-radius: 30px;
+  box-shadow: 0 24px 60px #26374c15;
+}
+.beauty-welcome-photo-label {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 9px;
+  letter-spacing: 0.07em;
+  background: #ffffffeb;
+  color: var(--beauty-ink);
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+.beauty-floating-card {
+  position: absolute;
+  background: #fff;
+  border: 1px solid #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 36px #25395617;
+}
+.beauty-floating-palette {
+  left: -30px;
+  bottom: 100px;
+  padding: 22px;
+  width: 260px;
+}
+.beauty-floating-palette > span {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: var(--beauty-muted);
+  display: block;
+  margin-bottom: 8px;
+}
+.beauty-floating-palette strong {
+  font-size: 17px;
+  font-weight: 500;
+}
+.beauty-floating-palette > div {
+  display: flex;
+  gap: 9px;
+  margin-top: 14px;
+}
+.beauty-floating-palette i {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+}
+.beauty-floating-feature {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  right: -25px;
+  bottom: 28px;
+  padding: 18px;
+}
+.beauty-floating-feature > svg {
+  color: var(--beauty-accent);
+}
+.beauty-floating-feature strong,
+.beauty-floating-feature span {
+  display: block;
+}
+.beauty-floating-feature strong {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+.beauty-floating-feature span {
+  font-size: 12px;
+  color: var(--beauty-muted);
+}
+.beauty-progress {
+  max-width: 1280px;
+  margin: auto;
+  padding: 12px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.beauty-progress ol {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+}
+.beauty-progress li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13px;
+  color: var(--beauty-muted);
+}
+.beauty-progress li > span {
+  display: grid;
+  place-items: center;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background: #e6ebf5;
+  color: #606a7d;
+  font-size: 12px;
+}
+.beauty-progress li.current {
+  color: var(--beauty-ink);
+  font-weight: 600;
+}
+.beauty-progress li.current > span {
+  color: #fff;
+  background: var(--beauty-accent);
+}
+.beauty-progress-time {
+  color: var(--beauty-muted);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+}
+.beauty-step-card {
+  max-width: 1120px;
+  margin: 10px auto 28px;
+  padding: 30px 40px 0;
+}
+.beauty-step-heading {
+  max-width: 650px;
+  margin-bottom: 28px;
+}
+.beauty-step-heading h1 {
+  font-size: clamp(36px, 4vw, 52px);
+  margin: 12px 0 16px;
+}
+.beauty-step-heading > p {
+  margin: 0;
+  font-size: 16px;
+}
+.beauty-privacy {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 32px 0;
+}
+.beauty-privacy > div {
+  background: #fff;
+  border: 1px solid var(--beauty-line);
+  border-radius: 20px;
+  padding: 24px;
+}
+.beauty-privacy svg {
+  color: var(--beauty-accent);
+  margin-bottom: 20px;
+}
+.beauty-privacy strong {
+  display: block;
+  font-size: 17px;
+  letter-spacing: -0.02em;
+}
+.beauty-privacy p {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+.beauty-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: #fff;
+  border: 1px solid var(--beauty-line);
+  border-radius: 14px;
+  padding: 20px;
+  margin: 18px 0;
+  cursor: pointer;
+  min-height: 64px;
+  font-size: 16px;
+}
+.beauty-check input {
+  width: 22px;
+  height: 22px;
+  margin: 2px 0 0;
+  flex-shrink: 0;
+  accent-color: var(--beauty-accent);
+}
+.beauty-check > span {
+  line-height: 1.5;
+  font-weight: 600;
+}
+.beauty-check small {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--beauty-muted);
+  line-height: 1.6;
+  margin-top: 8px;
+}
+.beauty-step-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 0;
+  margin-top: 24px;
+  border-top: 1px solid var(--beauty-line);
+}
+.beauty-step-actions > span {
+  color: var(--beauty-muted);
+  font-size: 13px;
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  max-width: 320px;
+}
+.beauty-step-actions > .button {
+  min-width: 280px;
+}
+.beauty-photo-step {
+  max-width: 1240px;
+  padding-top: 20px;
+}
+.beauty-photo-step .beauty-step-heading {
+  margin-bottom: 22px;
+}
+.beauty-photo-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+.beauty-camera-stage {
+  height: 420px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #e9edf6;
+  border: 1px solid var(--beauty-line);
+}
+.beauty-camera-stage > img,
+.beauty-camera-stage > video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #172036;
+}
+.beauty-camera-stage > video {
+  transform: scaleX(-1);
+  object-fit: cover;
+}
+.beauty-camera-empty {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  text-align: center;
+  background: radial-gradient(ellipse at center, #fdfdff 0, #e9eefb 100%);
+}
+.beauty-camera-empty > div {
+  display: grid;
+  place-items: center;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #cfd8f7;
+  background: #f4f7ff;
+  border-radius: 28px;
+  color: var(--beauty-accent);
+  margin-bottom: 24px;
+}
+.beauty-camera-empty strong {
+  font-size: 19px;
+  letter-spacing: -0.02em;
+}
+.beauty-camera-empty p {
+  max-width: 260px;
+  font-size: 14px;
+}
+.beauty-camera-corners {
+  position: absolute;
+  inset: 22px;
+  border: 1px solid #b7c7ed;
+  border-radius: 18px;
+  pointer-events: none;
+}
+.beauty-face-frame {
+  position: absolute;
+  height: 280px;
+  width: 215px;
+  border: 2px solid #ffffffc9;
+  border-radius: 50%;
+  top: 34px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  box-shadow: 0 0 0 999px #17203622;
+}
+.beauty-camera-status {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #fff;
+  text-align: center;
+  padding: 14px;
+  background: #172036bd;
+  border-radius: 12px;
+  font-size: 13px;
+}
+.beauty-camera-status strong {
+  font-size: 34px;
+}
+.beauty-pause-camera {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-height: 48px;
+  padding: 10px 22px;
+  background: #fff;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  color: var(--beauty-ink);
+  font-size: 14px;
+}
+.beauty-photo-tag {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  background: #fffffff0;
+  color: var(--beauty-ink);
+  font-size: 10px;
+  letter-spacing: 0.07em;
+  padding: 9px 11px;
+  border-radius: 8px;
+}
+.beauty-photo-permissions .beauty-check {
+  margin-top: 0;
+}
+.beauty-makeup-optin {
+  border-color: #c8d3fa;
+  background: #f0f3ff;
+}
+.beauty-makeup-optin > span > svg {
+  vertical-align: -4px;
+  margin-right: 7px;
+  color: var(--beauty-accent);
+}
+.beauty-camera-actions {
+  display: flex;
+  gap: 12px;
+  margin: 18px 0;
+}
+.beauty-camera-actions > * {
+  flex: 1;
+  padding-inline: 14px !important;
+}
+.beauty-upload {
+  position: relative;
+  overflow: hidden;
+}
+.beauty-upload input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.beauty-upload.disabled {
+  opacity: 0.5;
+}
+.beauty-upload:focus-within {
+  outline: 3px solid var(--beauty-accent);
+  outline-offset: 4px;
+}
+.beauty-callout {
+  padding: 24px;
+  background: #fff;
+  border: 1px solid var(--beauty-line);
+  border-radius: 18px;
+}
+.beauty-confirm-summary {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 28px;
+  background: #fff;
+  border: 1px solid var(--beauty-line);
+  border-radius: 22px;
+  padding: 24px;
+  margin-bottom: 22px;
+  align-items: center;
+}
+.beauty-confirm-photo {
+  height: 195px;
+  background: var(--beauty-blue);
+  border-radius: 16px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  color: var(--beauty-accent);
+}
+.beauty-confirm-photo img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.beauty-confirm-summary h2 {
+  margin: 10px 0 14px;
+  font-size: 32px;
+}
+.beauty-confirm-summary p {
+  margin: 12px 0;
+  font-size: 14px;
+}
+.beauty-confirm-note {
+  display: block;
+  font-size: 12px;
+  color: var(--beauty-muted);
+  line-height: 1.6;
+}
+.beauty-choice-swatches {
+  display: flex;
+  gap: 8px;
+  margin: 12px 0;
+}
+.beauty-choice-swatches i {
+  width: 35px;
+  height: 35px;
+  display: block;
+  border-radius: 9px;
+}
+.beauty-face-features {
+  display: grid;
+  gap: 10px;
+}
+.beauty-step-confirm > .beauty-step-card > .beauty-face-features {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.beauty-feature-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 15px 18px;
+  background: #f5f7fc;
+  border-radius: 14px;
+}
+.beauty-feature-icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #e7ecff;
+  color: var(--beauty-accent);
+}
+.beauty-feature-row:nth-child(2) .beauty-feature-icon {
+  background: #eee8fb;
+  color: #7451ad;
+}
+.beauty-feature-row:nth-child(3) .beauty-feature-icon {
+  background: #f5e8f0;
+  color: #a54a78;
+}
+.beauty-feature-row > div > span {
+  display: block;
+  color: var(--beauty-muted);
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+.beauty-feature-row strong {
+  display: block;
+  font-size: 17px;
+  font-weight: 600;
+}
+.beauty-feature-row p {
+  font-size: 11px;
+  margin: 5px 0 0;
+  line-height: 1.5;
+}
+.beauty-step-confirm .beauty-feature-row {
+  align-items: start;
+  padding: 16px;
+}
+.beauty-step-confirm .beauty-feature-row p {
+  display: none;
+}
+.beauty-adjust,
+.beauty-exclusions {
+  border-top: 1px solid var(--beauty-line);
+  margin: 12px 0;
+}
+.beauty-adjust summary,
+.beauty-exclusions summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 60px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 500;
+}
+.beauty-adjust summary::after,
+.beauty-exclusions summary::after {
+  content: "+";
+  margin-left: auto;
+  font-size: 20px;
+}
+.beauty-adjust[open] summary::after,
+.beauty-exclusions[open] summary::after {
+  content: "−";
+}
+.beauty-palette-options {
+  border: 0;
+  padding: 0;
+  margin: 20px 0;
+  min-width: 0;
+}
+.beauty-palette-options legend {
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-size: 15px;
+}
+.beauty-palette-options > div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.beauty-palette-options label {
+  display: flex;
+  align-items: start;
+  gap: 10px;
+  padding: 16px;
+  border: 1px solid var(--beauty-line);
+  border-radius: 14px;
+  background: #fff;
+  cursor: pointer;
+}
+.beauty-palette-options input {
+  width: 20px;
+  height: 20px;
+  margin: 1px 0;
+  accent-color: var(--beauty-accent);
+  flex-shrink: 0;
+}
+.beauty-palette-options label.selected {
+  border-color: var(--beauty-accent);
+  background: #eef2ff;
+  box-shadow: inset 0 0 0 1px var(--beauty-accent);
+}
+.beauty-palette-options strong {
+  font-size: 14px;
+}
+.beauty-palette-options small {
+  display: block;
+  color: var(--beauty-muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+.beauty-palette-options .beauty-choice-swatches {
+  gap: 5px;
+}
+.beauty-palette-options .beauty-choice-swatches i {
+  width: 27px;
+  height: 27px;
+  border-radius: 6px;
+}
+.beauty-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 24px 0;
+}
+.beauty-form-row label,
+.beauty-exclusions label {
+  display: grid;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.beauty-shell select {
+  width: 100%;
+  min-height: 58px;
+  border: 1px solid var(--beauty-line);
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px;
+  color: var(--beauty-ink);
+  font: inherit;
+}
+.beauty-exclusion-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 16px 0;
+}
+.beauty-exclusion-tags button {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  min-height: 56px;
+  padding: 12px 18px;
+  background: #fff;
+  border: 1px solid var(--beauty-line);
+  border-radius: 12px;
+  font-size: 13px;
+}
+.beauty-feedback {
+  max-width: 1040px;
+  margin: 16px auto;
+  text-align: center;
+  padding: 18px 24px;
+  font-size: 14px;
+}
+.beauty-generating-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  position: fixed;
+  z-index: 20;
+  bottom: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #172036;
+  color: #fff !important;
+  border-radius: 14px;
+  width: min(600px, calc(100% - 48px));
+  box-shadow: 0 8px 30px #17203620;
+}
+.beauty-footer {
+  max-width: 1400px;
+  margin: auto;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 11px;
+  color: var(--beauty-muted);
+}
+.beauty-footer span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.beauty-book {
+  max-width: 1280px;
+  padding: 24px 40px 160px;
+  margin: auto;
+}
+.beauty-book > section {
+  margin-bottom: 44px;
+}
+.beauty-result-title {
+  margin: 8px 0 24px;
+}
+.beauty-result-title h1 {
+  font-size: clamp(30px, 3.5vw, 46px);
+  margin: 10px 0;
+}
+.beauty-result-title > p {
+  font-size: 15px;
+  margin: 10px 0;
+}
+.beauty-face-report {
+  display: grid;
+  grid-template-columns: 0.7fr 1fr;
+  gap: 34px;
+  background: #fff;
+  border: 1px solid var(--beauty-line);
+  border-radius: 24px;
+  padding: 24px;
+}
+.beauty-book-portrait {
+  min-height: 370px;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--beauty-blue);
+}
+.beauty-book-portrait > img {
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  object-fit: cover;
+}
+.beauty-face-report-copy {
+  padding: 14px 10px 8px 0;
+}
+.beauty-face-report-copy h2 {
+  font-size: 31px;
+  margin: 12px 0 20px;
+}
+.beauty-analysis-note {
+  font-size: 11px;
+  line-height: 1.6;
+  margin: 14px 0 0;
+}
+.beauty-no-portrait {
+  height: 100%;
+  min-height: 340px;
+  padding: 34px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.beauty-no-portrait > svg {
+  color: var(--beauty-accent);
+  margin-bottom: 28px;
+}
+.beauty-no-portrait strong {
+  font-size: 18px;
+}
+.beauty-no-portrait p {
+  font-size: 13px;
+  max-width: 240px;
+}
+.beauty-palette-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 24px;
+  padding: 32px;
+  border-radius: 22px;
+  background: linear-gradient(110deg, #edf1ff, #f1ecfb);
+  border: 1px solid #dee3f7;
+}
+.beauty-palette-section h2 {
+  margin: 10px 0;
+  font-size: 32px;
+}
+.beauty-palette-section p {
+  margin: 12px 0;
+  font-size: 14px;
+}
+.beauty-confirmed-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--beauty-accent);
+}
+.beauty-book-swatches {
+  display: flex;
+  gap: 12px;
+}
+.beauty-book-swatches > div {
+  flex: 1;
+  text-align: center;
+}
+.beauty-book-swatches i {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 16px;
+  margin-bottom: 10px;
+  box-shadow: inset 0 0 0 1px #1720360b;
+}
+.beauty-book-swatches span,
+.beauty-book-swatches small {
+  display: block;
+  font-size: 10px;
+  color: #5a6171;
+  margin-top: 4px;
+}
+.beauty-palette-section > .beauty-small {
+  grid-column: 1/-1;
+  margin: 0;
+  font-size: 11px;
+}
+.beauty-section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 22px;
+}
+.beauty-section-heading h2 {
+  margin: 10px 0 0;
+}
+.beauty-section-heading > p {
+  max-width: 300px;
+  font-size: 13px;
+  margin: 0;
+}
+.beauty-mood-grid,
+.beauty-lip-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.beauty-mood-card {
+  position: relative;
+  padding: 0;
+  text-align: left;
+  border: 1px solid var(--beauty-line);
+  border-radius: 20px;
+  background: #fff;
+  overflow: hidden;
+  color: var(--beauty-ink);
+  font: inherit;
+}
+.beauty-mood-card.selected {
+  border-color: var(--beauty-accent);
+  box-shadow: 0 0 0 2px var(--beauty-accent);
+}
+.beauty-mood-art {
+  position: relative;
+  aspect-ratio: 4/5;
+  background: #eaf0fa;
+  overflow: hidden;
+}
+.beauty-mood-art > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.beauty-generated-label {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  border-radius: 6px;
+  background: #ffffffe8;
+  color: var(--beauty-ink);
+  font-size: 9px;
+  padding: 7px 9px;
+  letter-spacing: 0.05em;
+}
+.beauty-mood-placeholder {
+  --mood-color: #a68ca4;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  text-align: center;
+  background: linear-gradient(145deg, #eef2fb, #f6f2f8);
+  color: #5d6380;
+}
+.beauty-mood-placeholder::before {
+  content: "";
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  background: var(--mood-color);
+  opacity: 0.2;
+  position: absolute;
+  top: 27%;
+  filter: blur(28px);
+}
+.beauty-mood-placeholder > svg {
+  color: #6979b8;
+  margin-bottom: 18px;
+}
+.beauty-mood-placeholder > span {
+  font-size: 14px;
+  font-weight: 500;
+}
+.beauty-mood-placeholder small {
+  margin-top: 10px;
+  font-size: 11px;
+  color: var(--beauty-muted);
+  max-width: 180px;
+}
+.beauty-mood-number {
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  padding: 7px 9px;
+  font-size: 11px;
+  background: #ffffffd9;
+  border-radius: 8px;
+}
+.beauty-mood-check {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  background: var(--beauty-accent);
+  color: #fff;
+  border-radius: 50%;
+}
+.beauty-mood-copy {
+  padding: 22px;
+}
+.beauty-mood-copy h3 {
+  margin-bottom: 9px;
+  font-size: 22px;
+}
+.beauty-mood-copy p {
+  margin: 0 0 18px;
+  font-size: 13px;
+}
+.beauty-mood-copy > span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--beauty-accent);
+}
+.beauty-makeup-create {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  background: var(--beauty-blue);
+  border: 1px solid #dbe3fa;
+  padding: 18px 22px;
+  border-radius: 16px;
+  margin-top: 20px;
+}
+.beauty-preview-downloads {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 10px;
+}
+.beauty-preview-downloads a {
+  font-size: 12px;
+  color: var(--beauty-accent);
+  text-decoration: none;
+  border: 1px solid var(--beauty-line);
+  border-radius: 12px;
+  background: white;
+}
+.beauty-makeup-create > div {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.beauty-makeup-create svg {
+  flex-shrink: 0;
+  color: var(--beauty-accent);
+}
+.beauty-makeup-create p {
+  font-size: 13px;
+  margin: 0;
+}
+.beauty-tabs {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid var(--beauty-line);
+  margin-bottom: 24px;
+}
+.beauty-tabs button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 60px;
+  padding: 16px 26px;
+  color: var(--beauty-muted);
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  font-size: 15px;
+}
+.beauty-tabs button[aria-selected="true"] {
+  color: var(--beauty-accent);
+  border-bottom-color: var(--beauty-accent);
+  font-weight: 600;
+}
+.beauty-length-options {
+  display: flex;
+  gap: 12px;
+  margin: 0 0 24px;
+}
+.beauty-length-options button {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+  min-height: 66px;
+  padding: 6px 14px 6px 6px;
+  background: #fff;
+  border: 1px solid var(--beauty-line);
+  border-radius: 12px;
+  color: var(--beauty-ink);
+  font-size: 13px;
+}
+.beauty-length-options button[aria-pressed="true"] {
+  border-color: var(--beauty-accent);
+  box-shadow: inset 0 0 0 1px var(--beauty-accent);
+  background: #edf1ff;
+}
+.beauty-length-options .beauty-hair-photo,
+.beauty-length-all {
+  height: 50px;
+  width: 44px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+.beauty-length-all {
+  display: grid;
+  place-items: center;
+  color: var(--beauty-accent);
+  background: #ecf0ff;
+}
+.beauty-idea-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.beauty-idea-grid:not(:has(> :nth-child(3))) {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.beauty-idea-card {
+  overflow: hidden;
+  border: 1px solid var(--beauty-line);
+  border-radius: 18px;
+  background: #fff;
+}
+.beauty-idea-art {
+  height: 330px;
+  position: relative;
+  overflow: hidden;
+}
+.beauty-idea-art > span {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: #ffffffef;
+  padding: 7px 9px;
+  font-size: 9px;
+  border-radius: 6px;
+  letter-spacing: 0.04em;
+}
+.beauty-idea-copy {
+  padding: 22px;
+}
+.beauty-idea-copy h3 {
+  font-size: 20px;
+}
+.beauty-idea-copy p {
+  font-size: 13px;
+  margin-bottom: 0;
+}
+.beauty-hair-swatches {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+.beauty-hair-swatches i {
+  display: block;
+  height: 36px;
+  border-radius: 8px;
+}
+.beauty-hair-swatches small {
+  font-size: 10px;
+  display: block;
+  text-align: center;
+  margin-top: 7px;
+  color: var(--beauty-muted);
+}
+.beauty-hair-swatches > p {
+  grid-column: 1/-1;
+  font-size: 10px;
+  margin: 0;
+}
+.beauty-jewelry-photo {
+  position: relative;
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 45px;
+  background: radial-gradient(ellipse at 45% 40%, #fff, #f0edf5);
+}
+.beauty-jewelry-photo > div {
+  height: 100px;
+  width: 65px;
+  border: 10px solid #b59a62;
+  border-left-color: #e6d8aa;
+  border-bottom-color: #8e7647;
+  border-radius: 48%;
+  box-shadow:
+    6px 10px 12px #1720361a,
+    inset 4px 3px 8px #b1a48030;
+  transform: rotate(-14deg);
+}
+.beauty-jewelry-photo > div:nth-child(2) {
+  transform: rotate(14deg);
+}
+.beauty-jewelry-photo.silver > div {
+  border-color: #a3abb5;
+  border-left-color: #e8edf1;
+  border-bottom-color: #7c8794;
+}
+.beauty-jewelry-photo.jewelry-drop > div {
+  height: 125px;
+  width: 46px;
+  border-radius: 20% 80% 60% 40%;
+}
+.beauty-jewelry-photo > span {
+  position: absolute;
+  bottom: 16px;
+  font-size: 9px;
+  letter-spacing: 0.07em;
+  color: var(--beauty-muted);
+}
+.beauty-lip-card {
+  padding: 22px;
+  border: 1px solid var(--beauty-line);
+  border-radius: 18px;
+  background: #fff;
+}
+.beauty-lip-art {
+  height: 100px;
+  position: relative;
+  display: flex;
+  align-items: end;
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 22px;
+}
+.beauty-lip-art span {
+  background: #fffffff0;
+  color: var(--beauty-ink);
+  border-radius: 6px;
+  padding: 6px 9px;
+  font-size: 10px;
+}
+.beauty-lip-card h3 {
+  font-size: 20px;
+  margin-top: 10px;
+}
+.beauty-lip-card p,
+.beauty-lip-card ul {
+  font-size: 13px;
+}
+.beauty-lip-card ul {
+  padding-left: 18px;
+  color: var(--beauty-muted);
+}
+.beauty-empty {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: #fff;
+  border: 1px solid var(--beauty-line);
+  border-radius: 18px;
+  padding: 26px;
+}
+.beauty-empty > svg {
+  color: var(--beauty-accent);
+  flex-shrink: 0;
+}
+.beauty-empty p {
+  margin: 0 0 6px;
+  color: var(--beauty-ink);
+  font-size: 15px;
+}
+.beauty-empty span {
+  font-size: 12px;
+  color: var(--beauty-muted);
+}
+.beauty-book-actions {
+  position: fixed;
+  z-index: 15;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fffffff7;
+  backdrop-filter: blur(16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 16px 28px max(16px, env(safe-area-inset-bottom));
+  border-top: 1px solid var(--beauty-line);
+  box-shadow: 0 -8px 30px #17203605;
+}
+.beauty-book-actions > div {
+  margin-right: auto;
+  max-width: 190px;
+}
+.beauty-book-actions strong,
+.beauty-book-actions > div > span {
+  display: block;
+}
+.beauty-book-actions strong {
+  font-size: 14px;
+}
+.beauty-book-actions > div > span {
+  font-size: 10px;
+  color: var(--beauty-muted);
+  line-height: 1.5;
+  margin-top: 5px;
+}
+.beauty-book-actions .button {
+  font-size: 14px;
+  min-height: 54px;
+  padding: 12px 18px;
+  gap: 8px;
+}
+.beauty-book-actions .beauty-text-button {
+  font-size: 12px;
+  padding: 8px 10px;
+}
+.beauty-share-unavailable {
+  flex: 1 0 100%;
+  margin: 0;
+  font-size: 10px;
+  text-align: center;
+}
+.beauty-share-panel img {
+  width: 240px;
+  margin: 24px auto;
+}
+.beauty-share-panel .beauty-check {
+  font-size: 14px;
+}
+.beauty-saved-intro {
+  max-width: 1200px;
+  padding: 28px 40px 0;
+  margin: auto;
+}
+.beauty-saved-intro p {
+  font-size: 14px;
+}
+.beauty-saved-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px 0;
+}
+.beauty-saved .beauty-book {
+  padding-bottom: 20px;
+}
+@media (max-width: 1200px) {
+  .beauty-book-actions > div {
+    display: none;
+  }
+  .beauty-welcome {
+    gap: 48px;
+    padding: 44px 40px;
+  }
+  .beauty-welcome-visual {
+    min-height: 480px;
+    margin: 0 12px;
+  }
+  .beauty-welcome h1 {
+    font-size: 54px;
+  }
+  .beauty-floating-palette {
+    width: 220px;
+    left: -20px;
+  }
+  .beauty-floating-palette i {
+    width: 36px;
+    height: 36px;
+  }
+  .beauty-floating-feature {
+    right: -12px;
+  }
+}
+@media (max-width: 1000px) {
+  .beauty-header {
+    padding-inline: 28px;
+    min-height: 72px;
+  }
+  .beauty-welcome {
+    padding: 36px 32px;
+    gap: 36px;
+  }
+  .beauty-welcome h1 {
+    font-size: 48px;
+  }
+  .beauty-welcome-visual {
+    min-height: 440px;
+  }
+  .beauty-floating-palette {
+    width: 200px;
+    padding: 18px;
+    bottom: 90px;
+  }
+  .beauty-floating-palette strong {
+    font-size: 15px;
+  }
+  .beauty-floating-feature {
+    padding: 14px;
+    gap: 9px;
+  }
+  .beauty-step-card {
+    padding: 24px 28px 0;
+  }
+  .beauty-progress {
+    padding-inline: 28px;
+  }
+  .beauty-progress-time {
+    display: none;
+  }
+  .beauty-photo-layout {
+    gap: 20px;
+  }
+  .beauty-camera-stage {
+    height: 440px;
+  }
+  .beauty-camera-actions {
+    flex-direction: column;
+  }
+  .beauty-book {
+    padding-inline: 28px;
+  }
+  .beauty-face-report {
+    gap: 24px;
+    padding: 20px;
+    grid-template-columns: 0.8fr 1fr;
+  }
+  .beauty-face-report-copy h2 {
+    font-size: 27px;
+  }
+  .beauty-feature-row {
+    gap: 12px;
+    padding: 12px;
+  }
+  .beauty-feature-row p {
+    display: none;
+  }
+  .beauty-feature-row strong {
+    font-size: 15px;
+  }
+  .beauty-idea-art {
+    height: 300px;
+  }
+  .beauty-mood-copy {
+    padding: 18px;
+  }
+  .beauty-mood-copy h3 {
+    font-size: 19px;
+  }
+  .beauty-mood-copy p {
+    font-size: 12px;
+  }
+}
+@media (max-width: 700px) {
+  .beauty-header {
+    padding: 12px 20px;
+    min-height: 68px;
+    gap: 12px;
+  }
+  .beauty-header .brand {
+    font-size: 25px;
+  }
+  .beauty-header > span {
+    display: none;
+  }
+  .beauty-header .beauty-text-button {
+    min-height: 44px;
+    padding: 8px 0;
+    font-size: 12px;
+  }
+  .beauty-welcome {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 24px;
+    gap: 30px;
+    align-items: stretch;
+  }
+  .beauty-welcome-visual {
+    height: 320px;
+    min-height: 320px;
+    width: min(100%, 350px);
+    margin: auto;
+  }
+  .beauty-hero-photo {
+    border-radius: 22px;
+  }
+  .beauty-floating-palette {
+    left: -8px;
+    bottom: 55px;
+    width: 180px;
+    padding: 14px;
+    border-radius: 12px;
+  }
+  .beauty-floating-palette strong {
+    font-size: 13px;
+  }
+  .beauty-floating-palette i {
+    width: 29px;
+    height: 29px;
+    border-radius: 7px;
+  }
+  .beauty-floating-palette > span {
+    font-size: 8px;
+  }
+  .beauty-floating-feature {
+    right: -8px;
+    bottom: 12px;
+    border-radius: 12px;
+  }
+  .beauty-floating-feature strong {
+    font-size: 13px;
+  }
+  .beauty-floating-feature span {
+    font-size: 10px;
+  }
+  .beauty-welcome h1 {
+    font-size: 43px;
+    margin: 18px 0;
+  }
+  .beauty-welcome-copy > p:not(.beauty-small) {
+    font-size: 16px;
+  }
+  .beauty-welcome-facts {
+    gap: 16px;
+    font-size: 13px;
+  }
+  .beauty-progress {
+    padding: 8px 16px;
+    gap: 8px;
+  }
+  .beauty-progress .beauty-text-button {
+    padding: 8px 0;
+  }
+  .beauty-progress ol {
+    gap: 12px;
+  }
+  .beauty-progress li {
+    font-size: 0;
+    gap: 0;
+  }
+  .beauty-progress li.current {
+    font-size: 11px;
+    gap: 7px;
+  }
+  .beauty-step-card {
+    padding: 24px 20px 0;
+    margin-top: 0;
+  }
+  .beauty-step-heading h1 {
+    font-size: 37px;
+  }
+  .beauty-step-heading p {
+    font-size: 14px;
+  }
+  .beauty-privacy {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin: 24px 0;
+  }
+  .beauty-privacy > div {
+    position: relative;
+    padding: 18px 18px 18px 58px;
+    border-radius: 14px;
+  }
+  .beauty-privacy svg {
+    position: absolute;
+    left: 18px;
+    top: 18px;
+    margin: 0;
+  }
+  .beauty-privacy p {
+    font-size: 12px;
+    margin: 8px 0 0;
+  }
+  .beauty-privacy strong {
+    font-size: 15px;
+  }
+  .beauty-check {
+    padding: 16px;
+    font-size: 14px;
+  }
+  .beauty-check small {
+    font-size: 11px;
+  }
+  .beauty-step-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 20px 0;
+  }
+  .beauty-step-actions > span {
+    font-size: 11px;
+  }
+  .beauty-step-actions > .button {
+    width: 100%;
+    min-width: 0;
+  }
+  .beauty-photo-layout {
+    grid-template-columns: 1fr;
+  }
+  .beauty-camera-stage {
+    height: 360px;
+  }
+  .beauty-face-frame {
+    width: 190px;
+    height: 245px;
+    top: 24px;
+  }
+  .beauty-camera-actions {
+    flex-direction: row;
+  }
+  .beauty-camera-actions .button {
+    font-size: 13px;
+    padding-inline: 12px !important;
+  }
+  .beauty-confirm-summary {
+    grid-template-columns: 85px 1fr;
+    gap: 16px;
+    padding: 18px;
+  }
+  .beauty-confirm-photo {
+    height: 130px;
+    border-radius: 12px;
+  }
+  .beauty-confirm-summary h2 {
+    font-size: 25px;
+  }
+  .beauty-confirm-summary p {
+    font-size: 12px;
+  }
+  .beauty-confirm-note {
+    font-size: 10px;
+  }
+  .beauty-step-confirm > .beauty-step-card > .beauty-face-features {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .beauty-step-confirm .beauty-feature-row {
+    padding: 12px 14px;
+    align-items: center;
+  }
+  .beauty-palette-options > div {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .beauty-palette-options label {
+    padding: 12px;
+    gap: 8px;
+  }
+  .beauty-palette-options strong {
+    font-size: 12px;
+  }
+  .beauty-palette-options .beauty-choice-swatches {
+    gap: 3px;
+  }
+  .beauty-palette-options .beauty-choice-swatches i {
+    width: 20px;
+    height: 20px;
+  }
+  .beauty-form-row {
+    grid-template-columns: 1fr;
+  }
+  .beauty-footer {
+    padding: 20px;
+    font-size: 10px;
+  }
+  .beauty-footer > span:last-child {
+    max-width: 135px;
+    text-align: right;
+  }
+  .beauty-book {
+    padding: 24px 20px 230px;
+  }
+  .beauty-book > section {
+    margin-bottom: 32px;
+  }
+  .beauty-result-title h1 {
+    font-size: 33px;
+  }
+  .beauty-result-title > p {
+    font-size: 13px;
+  }
+  .beauty-face-report {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 16px;
+  }
+  .beauty-book-portrait {
+    min-height: 310px;
+  }
+  .beauty-face-report-copy {
+    padding: 4px 0;
+  }
+  .beauty-face-report-copy h2 {
+    font-size: 27px;
+  }
+  .beauty-feature-row p {
+    display: block;
+    font-size: 10px;
+  }
+  .beauty-no-portrait {
+    min-height: 260px;
+  }
+  .beauty-palette-section {
+    grid-template-columns: 1fr;
+    padding: 24px;
+    gap: 20px;
+  }
+  .beauty-book-swatches {
+    gap: 8px;
+  }
+  .beauty-book-swatches i {
+    border-radius: 10px;
+  }
+  .beauty-section-heading {
+    display: block;
+    margin-bottom: 20px;
+  }
+  .beauty-section-heading h2 {
+    font-size: 30px;
+  }
+  .beauty-section-heading > p {
+    max-width: none;
+    margin-top: 12px;
+    font-size: 12px;
+  }
+  .beauty-mood-grid {
+    gap: 8px;
+  }
+  .beauty-mood-art {
+    aspect-ratio: 3/4;
+  }
+  .beauty-mood-number {
+    top: 7px;
+    left: 7px;
+    font-size: 9px;
+    padding: 5px;
+  }
+  .beauty-mood-check {
+    right: 6px;
+    top: 6px;
+    height: 22px;
+    width: 22px;
+  }
+  .beauty-mood-placeholder {
+    padding: 12px 8px;
+  }
+  .beauty-mood-placeholder > svg {
+    width: 20px;
+    margin-bottom: 10px;
+  }
+  .beauty-mood-placeholder > span {
+    font-size: 11px;
+  }
+  .beauty-mood-placeholder small {
+    display: none;
+  }
+  .beauty-mood-copy {
+    padding: 12px 9px;
+  }
+  .beauty-mood-copy h3 {
+    font-size: 13px;
+    letter-spacing: -0.025em;
+    min-height: 34px;
+  }
+  .beauty-mood-copy p {
+    display: none;
+  }
+  .beauty-mood-copy > span {
+    font-size: 9px;
+    min-height: 28px;
+  }
+  .beauty-mood-copy > span svg {
+    display: none;
+  }
+  .beauty-generated-label {
+    left: 4px;
+    bottom: 5px;
+    font-size: 6px;
+    padding: 4px;
+  }
+  .beauty-preview-downloads {
+    gap: 8px;
+  }
+  .beauty-preview-downloads a {
+    font-size: 9px;
+    padding: 10px 6px;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .beauty-makeup-create {
+    padding: 16px;
+  }
+  .beauty-makeup-create p {
+    font-size: 11px;
+  }
+  .beauty-makeup-create > div {
+    gap: 10px;
+  }
+  .beauty-tabs {
+    gap: 0;
+  }
+  .beauty-tabs button {
+    flex: 1;
+    padding: 12px 7px;
+    font-size: 12px;
+    gap: 6px;
+  }
+  .beauty-tabs svg {
+    width: 16px;
+  }
+  .beauty-length-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .beauty-length-options button {
+    font-size: 12px;
+  }
+  .beauty-idea-grid,
+  .beauty-idea-grid:not(:has(> :nth-child(3))) {
+    grid-template-columns: 1fr;
+  }
+  .beauty-idea-card {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    border-radius: 14px;
+  }
+  .beauty-idea-art {
+    height: 190px;
+  }
+  .beauty-idea-art > span {
+    font-size: 6px;
+    padding: 5px 6px;
+    left: 6px;
+    bottom: 8px;
+  }
+  .beauty-idea-copy {
+    padding: 20px 16px;
+  }
+  .beauty-idea-copy h3 {
+    font-size: 17px;
+  }
+  .beauty-idea-copy p {
+    font-size: 11px;
+  }
+  .beauty-hair-swatches {
+    gap: 4px;
+  }
+  .beauty-hair-swatches i {
+    height: 25px;
+  }
+  .beauty-hair-swatches small {
+    font-size: 7px;
+  }
+  .beauty-hair-swatches > p {
+    font-size: 8px;
+  }
+  .beauty-jewelry-photo {
+    min-height: 190px;
+    gap: 14px;
+  }
+  .beauty-jewelry-photo > div {
+    height: 65px;
+    width: 35px;
+    border-width: 6px;
+  }
+  .beauty-jewelry-photo.jewelry-drop > div {
+    height: 90px;
+    width: 27px;
+  }
+  .beauty-jewelry-photo > span {
+    font-size: 6px;
+  }
+  .beauty-lip-grid {
+    grid-template-columns: 1fr;
+  }
+  .beauty-book-actions {
+    padding: 10px 14px max(10px, env(safe-area-inset-bottom));
+    gap: 8px;
+  }
+  .beauty-book-actions .button {
+    font-size: 12px;
+    min-height: 48px;
+    padding: 11px 12px;
+    flex: 1 1 45%;
+    gap: 6px;
+  }
+  .beauty-book-actions .beauty-text-button {
+    font-size: 11px;
+    min-height: 44px;
+    flex: 1 1 45%;
+  }
+  .beauty-book-actions .primary {
+    order: 4;
+  }
+  .beauty-share-unavailable {
+    font-size: 8px;
+    order: 5;
+  }
+  .beauty-generating-status {
+    bottom: 190px;
+    font-size: 12px;
+    padding: 14px;
+  }
+  .beauty-saved-intro {
+    padding: 24px 20px 0;
+  }
+  .beauty-feedback {
+    margin: 16px;
+  }
+  .beauty-generating-status {
+    margin: 0;
+  }
+}
+@media (min-width: 701px) and (max-aspect-ratio: 4/5) {
+  .beauty-welcome {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 48px 64px;
+    min-height: calc(100svh - 160px);
+  }
+  .beauty-welcome-visual {
+    width: min(100%, 30svh, 600px);
+    height: min(40svh, 800px);
+    min-height: 0;
+    flex-shrink: 0;
+    margin: 0;
+  }
+  .beauty-welcome-copy {
+    width: 100%;
+    max-width: 760px;
+  }
+  .beauty-welcome h1 {
+    font-size: clamp(44px, 3.75svh, 72px);
+    margin: 22px 0;
+  }
+  .beauty-welcome-copy > p:not(.beauty-small) {
+    max-width: none;
+    font-size: clamp(18px, 1.25svh, 24px);
+  }
+  .beauty-welcome-copy > .button {
+    max-width: none;
+    min-height: 72px;
+    font-size: 19px;
+  }
+  .beauty-welcome-facts {
+    font-size: 16px;
+  }
+  .beauty-skin-entry {
+    min-height: 64px;
+    font-size: 16px;
+  }
+  .beauty-welcome-copy > .beauty-small {
+    font-size: 14px;
+  }
+  .beauty-floating-palette {
+    left: -50px;
+    bottom: 120px;
+  }
+  .beauty-floating-feature {
+    right: -50px;
+    bottom: 32px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .beauty-shell *,
+  .beauty-shell *::before,
+  .beauty-shell *::after {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media print {
+  .beauty-header,
+  .beauty-footer,
+  .beauty-book-actions,
+  .beauty-saved-actions,
+  .beauty-saved-intro,
+  .beauty-length-options,
+  .beauty-makeup-create {
+    display: none;
+  }
+  .beauty-shell {
+    background: #fff;
+  }
+  .beauty-book {
+    padding: 0;
+    margin: 0;
+  }
+  .beauty-book > section {
+    break-inside: avoid;
+    margin-bottom: 24px;
+  }
+  .beauty-mood-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

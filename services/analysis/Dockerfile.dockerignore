@@ -1,0 +1,16 @@
+# This Dockerfile builds from the repository root with an explicit allowlist.
+**
+!services/
+!services/analysis/
+!services/analysis/requirements.lock
+!services/analysis/src/
+!services/analysis/src/**
+!ml/
+!ml/src/
+!ml/src/senmiva_training/
+!ml/src/senmiva_training/__init__.py
+!ml/src/senmiva_training/vision_api.py
+**/__pycache__
+**/*.pyc
+**/.env
+**/.env.*

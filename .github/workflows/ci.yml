@@ -1,0 +1,101 @@
+name: Foundation checks
+
+on:
+  pull_request:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: foundation-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  web:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      APP_MODE: demo
+      NEXT_PUBLIC_APP_URL: http://127.0.0.1:3000
+      CI: true
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version: 24.16.0
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: npm run check
+      - run: npm run build
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        with:
+          python-version: 3.12.14
+      - run: python -m venv services/analysis/.venv
+      - run: services/analysis/.venv/bin/python -m pip install -r services/analysis/requirements.lock
+      - run: npm run test:integration
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
+
+  analysis:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        with:
+          python-version: 3.12.14
+          cache: pip
+          cache-dependency-path: services/analysis/requirements*.lock
+      - run: python -m pip install -r requirements-dev.lock
+        working-directory: services/analysis
+      - run: python -m pytest
+        working-directory: services/analysis
+
+  database:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: supabase/setup-cli@45a513f8c64c0bc8e0e3dfe572b5c95be85f6359 # v3.0.1
+        with:
+          version: 2.120.0
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version: 24.16.0
+          cache: npm
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        with:
+          python-version: 3.12.14
+      - run: npm ci --no-audit --no-fund
+      - run: python -m venv services/analysis/.venv
+      - run: services/analysis/.venv/bin/python -m pip install -r services/analysis/requirements.lock
+      - run: npx playwright install --with-deps chromium
+      - run: npm run supabase:start
+      - run: npm run supabase:local:prepare
+      - run: npm run test:db
+      - run: npm run supabase:check
+      - run: npm run build
+      - run: npm run test:supabase
+      - if: always()
+        run: supabase stop --no-backup
+
+  containers:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - run: docker build --tag senmiva-web:test .
+      - run: docker build --tag senmiva-analysis:test ./services/analysis

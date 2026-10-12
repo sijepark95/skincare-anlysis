@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>사진 모델 테스트 · Senmiva</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">본문으로 이동</a>
+    <header class="shell topbar">
+      <a class="brand" href="/" aria-label="Senmiva 사진 테스트 처음으로"
+        >senmiva<span aria-hidden="true">.</span></a
+      >
+      <span class="badge"
+        ><span class="status-dot" aria-hidden="true"></span>이 PC에서만
+        처리</span
+      >
+    </header>
+    <main id="main" class="shell">
+      <section class="intro" aria-labelledby="title">
+        <p class="eyebrow">PERSONAL PHOTO LAB</p>
+        <h1 id="title">내 사진으로,<br />모델을 확인하세요.</h1>
+        <p class="intro-copy">
+          학습된 피부사진 모델의 예측을 살펴보는 비공개 로컬 테스트입니다.
+        </p>
+        <p id="model-status" class="model-status" role="status">
+          모델 연결을 확인하고 있습니다.
+        </p>
+      </section>
+      <div class="workspace">
+        <section class="panel photo-panel" aria-labelledby="photo-heading">
+          <div class="section-heading">
+            <span class="step">01</span>
+            <h2 id="photo-heading">사진 준비</h2>
+          </div>
+          <p class="hint">
+            한 사람의 얼굴이 중앙에 크게 나온 밝고 선명한 사진을 선택하세요.
+            얼굴 부위만 잘라낸 사진도 사용할 수 있습니다.
+          </p>
+          <label class="file-picker" for="photo-file" id="picker">
+            <input
+              id="photo-file"
+              type="file"
+              accept="image/jpeg,image/png,image/webp"
+              aria-label="테스트할 사진"
+              aria-describedby="file-help"
+            />
+            <span class="upload-symbol" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  d="M4 8V5a1 1 0 0 1 1-1h3m8 0h3a1 1 0 0 1 1 1v3m0 8v3a1 1 0 0 1-1 1h-3m-8 0H5a1 1 0 0 1-1-1v-3"
+                />
+                <circle cx="12" cy="10" r="3" />
+                <path d="M7 18c0-3 2-5 5-5s5 2 5 5" />
+              </svg>
+            </span>
+            <strong id="choose-label">사진 선택</strong>
+            <span id="file-help"
+              >JPG · PNG · WebP / 최대 10MB / 최소 224 × 224</span
+            >
+          </label>
+          <div id="preview-wrap" class="preview-wrap" hidden>
+            <img id="photo-preview" alt="선택한 사진 미리보기" />
+            <div class="crop-note">
+              <canvas
+                id="crop-preview"
+                width="224"
+                height="224"
+                role="img"
+                aria-label="분석에 사용되는 중앙 영역 예시"
+              ></canvas>
+              <div>
+                <strong>중앙 자르기 예시</strong>
+                <p>
+                  실제 전처리와 조금 다를 수 있습니다. 얼굴 자동 감지는 하지
+                  않으니 얼굴 부위가 충분히 보이는지 확인하세요.
+                </p>
+              </div>
+            </div>
+          </div>
+          <form id="test-form">
+            <label class="consent" for="consent">
+              <input id="consent" type="checkbox" />
+              <span
+                >본인 사진 또는 사용 허가를 받은 사진이며, 이 PC에서 일시적으로
+                처리하는 데 동의합니다.</span
+              >
+            </label>
+            <p id="error" class="error" role="alert" hidden></p>
+            <button id="analyze" type="submit" class="primary" disabled>
+              모델로 테스트
+            </button>
+          </form>
+          <button id="clear" type="button" class="secondary" disabled>
+            사진과 결과 비우기
+          </button>
+          <p class="privacy-note">
+            사진과 결과를 파일·데이터베이스에 저장하지 않습니다. 원본 파일은
+            그대로 유지됩니다. 2분 동안 조작하지 않으면 이 화면을 비웁니다.
+          </p>
+        </section>
+        <section
+          id="results-panel"
+          class="panel result-panel"
+          aria-labelledby="result-heading"
+          aria-busy="false"
+        >
+          <div class="section-heading">
+            <span class="step">02</span>
+            <h2 id="result-heading" tabindex="-1">모델 예측</h2>
+          </div>
+          <div id="empty" class="empty-state">
+            <div class="empty-art" aria-hidden="true"><span></span><i></i></div>
+            <h3>사진 한 장으로 시작하세요</h3>
+            <p>
+              민감성, 미백, 주름, 여드름, 모공,<br />피부 처짐, 과각질, 붉어짐의
+              코드를 예측합니다.
+            </p>
+            <span class="quiet-badge">학습된 ConvNeXt-Tiny · 8개 항목</span>
+          </div>
+          <div id="loading" class="loading-state" hidden>
+            <span class="spinner" aria-hidden="true"></span>
+            <h3>모델이 사진을 확인하고 있어요</h3>
+            <p>첫 예측은 조금 더 걸릴 수 있습니다.</p>
+          </div>
+          <div id="results" hidden>
+            <p class="result-explanation">
+              학습 자료의 코드를 예측한 실험 결과입니다. 코드별 출력 비중은
+              <strong>정답률·피부 심각도·의학적 신뢰도</strong>가 아닙니다.
+            </p>
+            <div id="head-results" class="head-grid"></div>
+            <p id="result-model" class="result-model"></p>
+          </div>
+          <p
+            id="announcement"
+            class="sr-only"
+            role="status"
+            aria-live="polite"
+          ></p>
+        </section>
+      </div>
+      <aside class="research-note" aria-labelledby="research-title">
+        <h2 id="research-title">결과를 읽기 전에</h2>
+        <p>
+          실제 피부 진단이나 수분·탄력 측정이 아닙니다. 사진 품질과 얼굴 여부를
+          자동으로 확인하지 않으며, 학습 사진과 다른 조명·구도에서는 결과가
+          달라질 수 있습니다. 코드의 정확한 의미와 실제 매장 성능은 추가 검증이
+          필요합니다.
+        </p>
+        <p>
+          이 화면은 피부사진 모델만 테스트합니다. 성분 후보 모델과 연결하거나
+          상품을 추천하지 않습니다.
+        </p>
+      </aside>
+    </main>
+    <footer class="shell footer">
+      <span>Senmiva Research</span><span>저장 없이 확인하는 나만의 테스트</span>
+    </footer>
+  </body>
+</html>

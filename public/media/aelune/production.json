@@ -1,0 +1,156 @@
+{
+  "brand": "AELUNE",
+  "tagline": "Skin, seen differently.",
+  "workingIdentity": true,
+  "provider": "Higgsfield MCP",
+  "images": [
+    {
+      "role": "logo-concepts",
+      "jobId": "e840a4db-1ec3-4ada-b916-1c27990f1cb8",
+      "model": "gpt_image_2_5",
+      "aspect_ratio": "3:2",
+      "resolution": "1k",
+      "quality": "high",
+      "count": 1,
+      "prompt": "A refined identity concept sheet for a new luxury beauty technology brand named AELUNE. Three restrained logo concepts arranged vertically on warm ivory, each with the exact word AELUNE in immaculate uppercase editorial typography. Top and strongest concept: an elegant asymmetrical water droplet with a crescent-shaped negative-space opening, combined with widely spaced delicate high-contrast serif lettering. Middle: a minimal single-line refraction droplet and precise sans lettering. Bottom: a sculptural liquid A symbol with understated serif lettering. Single deep blue-black ink #11262F only. Small icy-blue swatch optional. Very generous whitespace, exact spelling AELUNE, flat 2D brand design, not a mockup, no labels, no invented words, no taglines, no shadows, no 3D. Professional art-directed identity exploration, premium minimal, crisp."
+    },
+    {
+      "role": "drop-opening",
+      "jobId": "19eb5816-0b91-4959-9eb8-df4be14c42e7",
+      "model": "gpt_image_2_5",
+      "aspect_ratio": "9:16",
+      "resolution": "2k",
+      "quality": "high",
+      "count": 1,
+      "prompt": "Photorealistic hyperreal 3D CGI luxury skincare commercial opening frame, vertical 9:16. One single flawless crystal-clear water droplet suspended in the upper-middle of a soft icy pastel blue environment #EAF5FB, above an infinite perfectly smooth water surface occupying the lower quarter. The droplet is a physically believable elegant teardrop with a fine tapered tip, precise luminous silver caustics and realistic transparent refraction. Beautiful restrained studio lighting from upper left, deep liquid detail, soft shadows, no excessive rainbow or bubbles, exceptionally sophisticated luxury cosmetics macro cinematography. The droplet occupies about 35 percent of image width, centered at x=50% and y=42%; pale clean negative space above and on the sides for separate editable website copy. Fine mist-like atmosphere, no horizon clutter. Clean serene composition, luminous but subtle, very high quality physically based render. No text, no logo, no bottle, no people, no labels, no interface. This is the matching starting frame for a continuous journey into the water droplet."
+    },
+    {
+      "role": "generated-adult-editorial",
+      "jobId": "1306bf6c-7980-45b8-a085-e9063ed34a47",
+      "model": "gpt_image_2_5",
+      "aspect_ratio": "4:5",
+      "resolution": "2k",
+      "quality": "high",
+      "count": 1,
+      "prompt": "High-end editorial beauty photograph for AELUNE skin-discovery concept campaign. A fully generated adult woman approximately 25 years old, natural face, serene closed lips, relaxed expression, eyes open looking gently toward camera, close cropped face and neck, no hands visible, natural real skin pores, a few subtle natural freckles and faint redness around cheeks, no airbrush plastic skin. Light dewy skin, barely-there natural makeup, dark hair cleanly swept back, no jewelry. Soft icy pastel blue background #EAF5FB and natural cool daylight with warm ivory skin highlights, luxury K-beauty editorial macro lens 85mm, exquisite cinematic depth. Face is centered, both eyes and chin comfortably inside frame. Very delicate sparse translucent white appearance contour lines along one cheek only, no charts, no numbers, no diagnostic text, no medical equipment. This is a promotional concept visual, not a clinical before/after. Clean negative space, no text, no logo, no products, no watermark. 4:5 vertical composition."
+    }
+  ],
+  "film": {
+    "jobId": "bfcaa3ad-bd5a-417f-9ab4-663ed6df89d7",
+    "model": "seedance_2_5",
+    "mode": "omni_reference",
+    "duration": 30,
+    "aspect_ratio": "9:16",
+    "resolution": "1080p",
+    "generate_audio": false,
+    "bitrate_mode": "standard",
+    "count": 1,
+    "medias": [
+      {
+        "role": "start_image",
+        "value": "19eb5816-0b91-4959-9eb8-df4be14c42e7"
+      },
+      {
+        "role": "image",
+        "value": "1306bf6c-7980-45b8-a085-e9063ed34a47"
+      },
+      {
+        "role": "end_image",
+        "value": "19eb5816-0b91-4959-9eb8-df4be14c42e7"
+      }
+    ],
+    "prompt": "INSIDE THE DROP — a single continuous 30-second luxury skincare beauty-technology concept film, vertical 9:16, photorealistic hyperreal 3D CGI, pale ice-blue #EAF5FB, silver caustics, ivory skin light, sophisticated premium Gen Z editorial art direction. Use the first reference as the exact opening composition and material reference; use the face reference only as the generated adult facial subject at the later reveal; finish with a matching clear droplet like the end reference. No words, letters, logos, numbers, subtitles, product branding or baked-in website interface text anywhere. No sound needed. This is a conceptual beauty campaign, not evidence of a real medical scan.\nTIMELINE AND CONTINUITY: 0–5 seconds: extreme macro of one crystal-clear water droplet suspended over a perfectly smooth ice-blue water surface. Beautiful optical refraction and a fine tapered tip, elegant luminous studio lighting. The camera slowly approaches as the droplet slowly falls. 5–10 seconds: droplet strikes the surface in controlled beautiful slow motion, creates one circular ripple; at the center of the ripple the camera dives smoothly into the water. During the dive the surface leaves the frame entirely and only translucent moving liquid fills the viewport, so there is a genuine isolated transition without a face already visible. 10–17 seconds: seamless forward travel through an abstract microscopic world INSPIRED BY skin: transparent hydration-like layers, soft gel structures, luminous water molecules and delicate particles. Organic and scientifically inspired, never medically literal, no diseased tissue. Realistic restrained fluid simulation, smooth parallax and depth, no cuts, no fast chaotic zoom. 17–24 seconds: the same particles gradually coalesce into a photorealistic adult woman's face matching the facial reference. Slowly settle into a straight-on beauty closeup. Natural subtle skin texture, pores, faint cheek redness and uneven-looking tone; serene expression and one gentle natural blink. Sparse delicate white cosmetic appearance contour lines illuminate on the cheek, sophisticated and plausible, no measurements or text, no scary laser effect. Head stable, realistic anatomy, no face distortion. 24–30 seconds: the light contours dissolve into luminous clear serum ribbons. They swirl elegantly in the same camera direction, the face dissolves completely out of frame into the liquid, which gathers into one suspended crystal-clear droplet against the original pastel-blue world. End in a calm still composition that visually echoes the opening. Continuous motivated fluid transformations, natural physically believable materials and lighting, preserve macro visual detail. Never show source, transition and destination simultaneously throughout. Reserve quiet negative space near the top and lower left; important droplet and face stay centered for mobile. Luxury cinematic macro lens, shallow depth, subtle bloom, no jump cuts, no glitches, no extra facial features or hands. EXACTLY thirty seconds."
+  },
+  "logo": {
+    "selected": "First concept: crescent-shaped negative space inside a water drop",
+    "master": "/brand/aelune-wordmark.svg",
+    "mark": "/brand/aelune-mark.svg",
+    "construction": "Editable vector interpretation of the selected generated concept, with editable Georgia wordmark text; raster concept sheet preserved separately."
+  },
+  "scope": "Promotional concept artwork only. Generated adult reference is not a customer photo or an actual analysis result.",
+  "assets": [
+    {
+      "path": "public/media/aelune/inside-the-drop.mp4",
+      "bytes": 13729959,
+      "sha256": "45795b56275ad52b2ff07e1a2bdc09e0f5a4ee65cc042a7afab85d6fdca55440"
+    },
+    {
+      "path": "public/media/aelune/inside-the-drop-web.mp4",
+      "bytes": 5561133,
+      "sha256": "92ed7f743c552debaacd3f52325a72b1c650a84f0562dc6c084c9e859c284fe9"
+    },
+    {
+      "path": "public/media/aelune/drop-source.png",
+      "bytes": 3851616,
+      "sha256": "7ad292a6585773924f0573e9163e800fea52ba1d52e07e0f577279fc8f4c0657",
+      "width": 1520,
+      "height": 2688
+    },
+    {
+      "path": "public/media/aelune/skin-source.png",
+      "bytes": 5256986,
+      "sha256": "f79c1290f9d6406ec553eb31e60471d4f7e32a2073c633e63b01c9b79bf34a27",
+      "width": 1792,
+      "height": 2240
+    },
+    {
+      "path": "public/media/aelune/drop-poster.webp",
+      "bytes": 44906,
+      "sha256": "036a7eeaa52baab424ae570bfd8fc86974a51dc02a6cdfd3c59d236348d4d559",
+      "width": 1018,
+      "height": 1800
+    },
+    {
+      "path": "public/media/aelune/skin-poster.webp",
+      "bytes": 199610,
+      "sha256": "0579657334b0fb16c7299fcb80bc39d40821660fefd08ad528d2fb75ef0db6e6",
+      "width": 1440,
+      "height": 1800
+    }
+  ],
+  "sequence": {
+    "width": 720,
+    "height": 1280,
+    "fps": 18,
+    "frameCount": 541,
+    "durationSeconds": 30.04,
+    "sourceSha256": "45795b56275ad52b2ff07e1a2bdc09e0f5a4ee65cc042a7afab85d6fdca55440",
+    "bytes": 15787410,
+    "largestFrameBytes": 55400
+  },
+  "sourceInspection": {
+    "width": 1080,
+    "height": 1920,
+    "frameRate": 24,
+    "durationSeconds": 30.042,
+    "codec": "HEVC",
+    "audioStreams": 0,
+    "beatsSeconds": {
+      "drop": [
+        0,
+        5
+      ],
+      "ripple": [
+        5,
+        10
+      ],
+      "layers": [
+        10,
+        19
+      ],
+      "face": [
+        19,
+        25
+      ],
+      "serum": [
+        25,
+        28
+      ],
+      "returnDrop": [
+        29,
+        30
+      ]
+    },
+    "visualReview": "Actual ten-frame contact sheet inspected; source surface leaves before the hydration world and particles resolve into the face; no baked website copy or diagnostic numbers."
+  }
+}

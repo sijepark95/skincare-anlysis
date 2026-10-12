@@ -1,0 +1,26 @@
+{
+  "mockOnly": true,
+  "reviewed": true,
+  "version": 1,
+  "rules": [
+    { "concern": "dehydration", "ingredient": "Glycerin", "relevance": 3 },
+    { "concern": "dehydration", "ingredient": "Sodium Hyaluronate", "relevance": 3 },
+    { "concern": "dehydration", "ingredient": "Hyaluronic Acid", "relevance": 3 },
+    { "concern": "dehydration", "ingredient": "Panthenol", "relevance": 2 },
+    { "concern": "dehydration", "ingredient": "Ceramide NP", "relevance": 2 },
+    { "concern": "dehydration", "ingredient": "Squalane", "relevance": 2 },
+    { "concern": "dehydration", "ingredient": "Betaine", "relevance": 2 },
+    { "concern": "texture", "ingredient": "Gluconolactone", "relevance": 3 },
+    { "concern": "texture", "ingredient": "Lactic Acid", "relevance": 3 },
+    { "concern": "texture", "ingredient": "Salicylic Acid", "relevance": 3 },
+    { "concern": "texture", "ingredient": "Niacinamide", "relevance": 2 },
+    { "concern": "uneven_tone", "ingredient": "Niacinamide", "relevance": 3 },
+    { "concern": "uneven_tone", "ingredient": "Ascorbyl Glucoside", "relevance": 3 },
+    { "concern": "uneven_tone", "ingredient": "Ascorbic Acid", "relevance": 3 },
+    { "concern": "uneven_tone", "ingredient": "Lactic Acid", "relevance": 1 },
+    { "concern": "fine_lines", "ingredient": "Palmitoyl Tripeptide-1", "relevance": 3 },
+    { "concern": "fine_lines", "ingredient": "Niacinamide", "relevance": 2 },
+    { "concern": "fine_lines", "ingredient": "Sodium Hyaluronate", "relevance": 2 },
+    { "concern": "fine_lines", "ingredient": "Hyaluronic Acid", "relevance": 2 }
+  ]
+}
